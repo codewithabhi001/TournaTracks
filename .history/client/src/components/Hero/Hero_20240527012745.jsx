@@ -38,7 +38,7 @@ const HeroSection = () => {
           </button>
         </div>
         <div className="mt-4 md:mt-0 relative">
-          <div className="absolute inset-0 rounded-md"></div>
+          <div className="absolute inset-0 bg-black opacity-70 rounded-md"></div>
           <img
             src="/logo2.png"
             alt="Tournament Management"
@@ -46,49 +46,6 @@ const HeroSection = () => {
           />
         </div>
       </div>
-      <style jsx>{`
-        .typewriter-text {
-          display: inline-block;
-          background: linear-gradient(90deg, #7b4397, #dc2430, #6a11cb);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          filter: drop-shadow(
-            0 0 20px rgba(108, 17, 203, 0.4)
-              /* Match with the button gradient */
-          ); /* Adjust glow color */
-        }
-
-        .highlight {
-          background: linear-gradient(90deg, #7b4397, #dc2430, #6a11cb);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          filter: drop-shadow(
-            0 0 20px rgba(108, 17, 203, 0.4)
-              /* Match with the button gradient */
-          ); /* Adjust glow color */
-        }
-
-        .glow-button {
-          filter: drop-shadow(
-            0 0 20px rgba(108, 17, 203, 0.5)
-              /* Match with the button gradient */
-          ); /* Adjust glow color */
-        }
-
-        .animated-logo {
-          animation: moveUpDown 3s infinite alternate ease-in-out;
-          transition: filter 0.3s ease-in-out;
-        }
-
-        @keyframes moveUpDown {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50px); /* Adjust movement */
-          }
-        }
-      `}</style>
     </div>
   );
 };

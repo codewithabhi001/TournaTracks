@@ -38,11 +38,11 @@ const HeroSection = () => {
           </button>
         </div>
         <div className="mt-4 md:mt-0 relative">
-          <div className="absolute inset-0 rounded-md"></div>
+          <div className="absolute inset-0 bg-black opacity-70 rounded-md"></div>
           <img
             src="/logo2.png"
             alt="Tournament Management"
-            className=" lg:max-w-[550px] rounded-md hover:scale-95 duration-700 ease-out transform transition-transform animated-logo"
+            className="backdrop-blur-3xl lg:max-w-[550px] rounded-md hover:scale-95 duration-700 ease-out transform transition-transform animated-logo"
           />
         </div>
       </div>
