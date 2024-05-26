@@ -105,7 +105,7 @@ const Register = () => {
             />
             <button
               type="submit"
-              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-[#dc2430] text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
+              className={`bg-gradient-to-r from-purple-500 to-pink-500 hover:from-blue-500 hover:to-green-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}
@@ -119,7 +119,7 @@ const Register = () => {
             </div>
           </form>
         </div>
-        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb]">
+        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-800 border-l-4 border-pink-500 bg-gradient-to-br from-pink-500 to-purple-500">
           <img
             src="Hero3.png"
             alt="Register Illustration"

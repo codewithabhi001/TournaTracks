@@ -36,7 +36,7 @@ function Footer() {
               <li>
                 <Link
                   to="/AddSlotsForm"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaGamepad className="mr-2" />
                   Games
@@ -45,7 +45,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaShoppingCart className="mr-2" />
                   Accessories
@@ -54,7 +54,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaGamepad className="mr-2" />
                   Consoles
@@ -63,7 +63,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaTrophy className="mr-2" />
                   Merchandise
@@ -79,7 +79,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaUsers className="mr-2" />
                   Forums
@@ -88,7 +88,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaTrophy className="mr-2" />
                   Events
@@ -97,7 +97,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaGamepad className="mr-2" />
                   Contests
@@ -106,7 +106,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaGamepad className="mr-2" />
                   Challenges
@@ -120,7 +120,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaLifeRing className="mr-2" />
                   Help Center
@@ -129,7 +129,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaEnvelope className="mr-2" />
                   Contact Us
@@ -138,7 +138,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center"
+                  className="text-lg font-bold hover:text-yellow-500 flex items-center"
                 >
                   <FaQuestionCircle className="mr-2" />
                   FAQs
@@ -152,21 +152,21 @@ function Footer() {
               <Link
                 to="#"
                 title="Facebook"
-                className="flex items-center p-2 bg-pink-600 rounded-full hover:bg-pink-400"
+                className="flex items-center p-2 bg-pink-600 rounded-full"
               >
                 <FaFacebookF className="text-white text-xl animate-pulse" />
               </Link>
               <Link
                 to="#"
                 title="Twitter"
-                className="flex items-center p-2 bg-pink-600 rounded-full hover:bg-pink-400"
+                className="flex items-center p-2 bg-pink-600 rounded-full"
               >
                 <FaTwitter className="text-white text-xl animate-pulse" />
               </Link>
               <Link
                 to="#"
                 title="Instagram"
-                className="flex items-center p-2 bg-pink-600 rounded-full hover:bg-pink-400"
+                className="flex items-center p-2 bg-pink-600 rounded-full"
               >
                 <FaInstagram className="text-white text-xl animate-pulse" />
               </Link>

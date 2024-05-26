@@ -158,7 +158,7 @@ export default function Nav() {
             className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
             style={{ textDecoration: "none", color: "#ffff" }}
           >
-            <FaUserPlus
+            <FaUserPluss
               size={20}
               color="#fff"
               style={{ marginRight: "0.5rem" }}

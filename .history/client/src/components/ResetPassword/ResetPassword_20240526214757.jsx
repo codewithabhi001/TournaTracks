@@ -68,7 +68,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black mt-14 mb-14 md:mt-0">
+    <div className="min-h-screen bg-black flex justify-center items-center">
       <div className="max-w-3xl flex justify-center items-center w-full">
         <div className="bg-transparent p-8 rounded-md shadow-lg border border-gray-700 text-white w-full max-w-md">
           <h2 className="text-3xl font-bold text-center mb-8">
@@ -103,7 +103,7 @@ const ResetPassword = () => {
             </div>
             <button
               type="submit"
-              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-[#dc2430] text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
+              className={`bg-gradient-to-r from-purple-500 to-pink-500 hover:from-blue-500 hover:to-green-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}

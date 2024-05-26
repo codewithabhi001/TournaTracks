@@ -156,7 +156,7 @@ export default function Nav() {
           <Link
             to="/register"
             className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
-            style={{ textDecoration: "none", color: "#ffff" }}
+            style={{ textDecoration: "none", color: "#ffcc00" }}
           >
             <FaUserPlus
               size={20}

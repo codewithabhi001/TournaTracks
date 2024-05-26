@@ -155,14 +155,9 @@ export default function Nav() {
         <NavbarItem className="hidden lg:flex">
           <Link
             to="/register"
-            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
-            style={{ textDecoration: "none", color: "#ffff" }}
+            className="nav-link font-bold shadow-slate-300 flex items-center"
           >
-            <FaUserPlus
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
+            <FaUserPlus size={20} color="#ffcc00" />
             Sign Up
           </Link>
         </NavbarItem>
@@ -173,14 +168,9 @@ export default function Nav() {
             as={Link}
             to="/login"
             variant="flat"
-            className="glow-button bg-gradient-to-r from-[#7b4397] to-[#dc2430] hover:from-[#6a11cb] hover:to-[#2575fc] text-white font-bold py-2 rounded-md px-4 transform transition duration-300 hover:scale-105 flex items-center"
-            style={{ textDecoration: "none" }}
+            className="glow-button bg-gradient-to-r from-[#7b4397] to-[#dc2430] hover:from-[#6a11cb] hover:to-[#2575fc] text-white font-bold py-2 rounded-md w-full transform transition duration-300 hover:scale-105 flex items-center"
           >
-            <FaSignInAlt
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
+            <FaSignInAlt size={20} color="#fff" />
             Login
           </Button>
         </NavbarItem>

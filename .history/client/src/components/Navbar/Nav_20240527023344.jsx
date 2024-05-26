@@ -11,11 +11,10 @@ import {
   Button,
 } from "@nextui-org/react";
 import { GiConsoleController } from "react-icons/gi"; // Importing gaming controller icon
-import { FaCaretDown, FaSignInAlt, FaUserPlus } from "react-icons/fa"; // Importing Font Awesome icons for login and sign up
+import { FaCaretDown } from "react-icons/fa"; // Importing caret down icon
 import { AiFillDashboard } from "react-icons/ai"; // Importing dashboard icon
 import { MdViewList } from "react-icons/md"; // Importing list icon
 import { BsFillLightningFill } from "react-icons/bs"; // Importing lightning icon for animation
-import { AiOutlineStar } from "react-icons/ai"; // Importing star icon for features
 import { AcmeLogo } from "./AcmeLogo";
 
 export default function Nav() {
@@ -87,108 +86,70 @@ export default function Nav() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 !justify-center font-bold">
-        {[
-          {
-            name: "Features",
-            icon: <AiOutlineStar size={24} color="#00ff00" />,
-            link: "#",
-          },
-          {
-            name: "Customers",
-            icon: <MdViewList size={24} color="#ff0000" />,
-            link: "#",
-          },
-          {
-            name: "Pricing",
-            icon: <BsFillLightningFill size={24} color="#ff9900" />,
-            link: "#",
-          },
-          {
-            name: "Dashboard",
-            icon: <AiFillDashboard size={24} color="#ff00ff" />,
-            link: "#",
-          },
-        ].map((category, index) => (
-          <div
-            key={category.name}
-            className="relative dropdown-item"
-            onMouseEnter={() => handleDropdownHover(index)}
-            onMouseLeave={handleDropdownLeave}
-            onClick={() => handleDropdownToggle(index)}
-          >
-            <Link
-              to={category.link}
-              className="nav-link inline-block flex items-center"
-            >
-              {category.icon}
-              <span className="ml-1 text-white">{category.name}</span>
-              <FaCaretDown className="ml-1" />
-            </Link>
+        {["Features", "Customers", "Pricing", "Dashboard"].map(
+          (category, index) => (
             <div
-              className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#000000] to-[#000000] text-white rounded shadow-lg ${
-                activeDropdown === index ? "block" : "hidden"
-              }`}
-              style={{
-                backdropFilter: "blur(5px)",
-                border: "2px solid transparent",
-                borderImage:
-                  "linear-gradient(to right, red, pink, yellow, green, blue) 1",
-              }}
+              key={category}
+              className="relative dropdown-item"
+              onMouseEnter={() => handleDropdownHover(index)}
+              onMouseLeave={handleDropdownLeave}
+              onClick={() => handleDropdownToggle(index)}
             >
-              {menuItems.slice(index * 3, index * 3 + 3).map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.link}
-                  className="block px-4 py-2 text-sm hover:bg-[#4f2e4f34] transition-colors duration-300"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <Link to="#" className="nav-link inline-block flex items-center">
+                {category === "Features" && (
+                  <GiConsoleController className="mr-1 text-[#3b82f6]" />
+                )}
+                {category === "Customers" && (
+                  <MdViewList className="mr-1 text-[#10b981]" />
+                )}
+                {category === "Pricing" && (
+                  <BsFillLightningFill className="mr-1 text-[#f59e0b]" />
+                )}
+                {category === "Dashboard" && (
+                  <AiFillDashboard className="mr-1 text-[#ef4444]" />
+                )}
+                <FaCaretDown className="ml-1" />
+              </Link>
+              <div
+                className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#7b4397] to-[#dc2430] text-white rounded shadow-lg ${
+                  activeDropdown === index ? "block" : "hidden"
+                }`}
+              >
+                {menuItems.slice(index * 3, index * 3 + 3).map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.link}
+                    className="block px-4 py-2 text-sm hover:bg-[#4f2e4f34] transition-colors duration-300"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </NavbarContent>
 
-      {/* Navbar items for login and sign up */}
       <NavbarContent justify="end">
-        {/* Sign Up button */}
         <NavbarItem className="hidden lg:flex">
-          <Link
-            to="/register"
-            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
-            style={{ textDecoration: "none", color: "#ffff" }}
-          >
-            <FaUserPlus
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
+          <Link to="/register" className="nav-link font-bold shadow-slate-300">
             Sign Up
           </Link>
         </NavbarItem>
 
-        {/* Login button */}
         <NavbarItem>
           <Button
             as={Link}
             to="/login"
             variant="flat"
-            className="glow-button bg-gradient-to-r from-[#7b4397] to-[#dc2430] hover:from-[#6a11cb] hover:to-[#2575fc] text-white font-bold py-2 rounded-md px-4 transform transition duration-300 hover:scale-105 flex items-center"
-            style={{ textDecoration: "none" }}
+            className="glow-button bg-gradient-to-r from-[#7b4397] to-[#dc2430] hover:from-[#6a11cb] hover:to-[#2575fc] text-white font-bold py-2 rounded-md w-full transform transition duration-300 hover:scale-105"
           >
-            <FaSignInAlt
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
             Login
           </Button>
         </NavbarItem>
       </NavbarContent>
 
-      {/* Navbar menu for smaller screens */}
       <NavbarMenu className="bg-gradient-to-r from-[#7b4397] to-[#dc2430] text-white">
-        {/* Rendering menu items */}
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link

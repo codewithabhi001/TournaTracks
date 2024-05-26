@@ -157,12 +157,12 @@ export default function Nav() {
             to="/register"
             className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
             style={{ textDecoration: "none", color: "#ffff" }}
-          >
-            <FaUserPlus
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
+          // >
+          //   <FaUserPlus
+          //     size={20}
+          //     color="#fff"
+          //     style={{ marginRight: "0.5rem" }}
+          //   />
             Sign Up
           </Link>
         </NavbarItem>

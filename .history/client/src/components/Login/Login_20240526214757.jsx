@@ -46,8 +46,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black mt-14 mb-14 md:mt-0">
-      <div className="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-2xl border border-gray-700 w-full max-w-4xl">
+    <div className="flex items-center justify-center min-h-screen bg-black">
+      <div className="flex flex-col md:flex-row bg-[#000] rounded-lg overflow-hidden shadow-2xl border border-gray-700 w-full max-w-4xl">
         <div className="p-10 text-white w-full md:w-1/2">
           <h1 className="text-center text-3xl mb-6">Login</h1>
           <form onSubmit={handleSubmit}>
@@ -79,7 +79,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-[#dc2430] text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
+              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-green-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}
@@ -92,9 +92,9 @@ const Login = () => {
               <i className="fab fa-facebook text-2xl cursor-pointer hover:text-pink-500"></i>
             </div>
             <div className="text-center">
-              <Link to="/register" className="text-pink-500">
+              <a to="#" className="text-pink-500">
                 Create an account
-              </Link>
+              </a>
             </div>
           </form>
         </div>

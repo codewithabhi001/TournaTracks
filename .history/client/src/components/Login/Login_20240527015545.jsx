@@ -79,7 +79,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-[#dc2430] text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
+              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-green-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}

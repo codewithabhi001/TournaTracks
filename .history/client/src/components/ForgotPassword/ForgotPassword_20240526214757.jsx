@@ -37,7 +37,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black mt-14 mb-14 md:mt-0">
+    <div className="flex items-center justify-center min-h-screen bg-black">
       <div className="flex flex-col md:flex-row bg-[#000] rounded-lg overflow-hidden shadow-2xl border border-gray-700 w-full max-w-4xl">
         <div className="p-10 text-white w-full md:w-1/2">
           <h1 className="text-center text-3xl mb-6">Forgot Password</h1>
@@ -56,7 +56,7 @@ const ForgotPassword = () => {
             />
             <button
               type="submit"
-              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-[#dc2430] text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
+              className={`bg-gradient-to-r from-purple-500 to-pink-500 hover:from-blue-500 hover:to-green-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}
@@ -70,7 +70,7 @@ const ForgotPassword = () => {
             </div>
           </form>
         </div>
-        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb]">
+        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-800 border-l-4 border-pink-500 bg-gradient-to-br from-pink-500 to-purple-500">
           <img
             src="Hero3.png"
             alt="Forgot Password Illustration"

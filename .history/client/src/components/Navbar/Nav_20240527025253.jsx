@@ -9,14 +9,14 @@ import {
   NavbarContent,
   NavbarItem,
   Button,
-} from "@nextui-org/react";
+} from "@nextui-org/react"; // Importing Next UI components
 import { GiConsoleController } from "react-icons/gi"; // Importing gaming controller icon
 import { FaCaretDown, FaSignInAlt, FaUserPlus } from "react-icons/fa"; // Importing Font Awesome icons for login and sign up
 import { AiFillDashboard } from "react-icons/ai"; // Importing dashboard icon
 import { MdViewList } from "react-icons/md"; // Importing list icon
 import { BsFillLightningFill } from "react-icons/bs"; // Importing lightning icon for animation
 import { AiOutlineStar } from "react-icons/ai"; // Importing star icon for features
-import { AcmeLogo } from "./AcmeLogo";
+import { AcmeLogo } from "./AcmeLogo"; // Assuming AcmeLogo is a custom component for your logo
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -36,16 +36,19 @@ export default function Nav() {
     { name: "Log Out", link: "/logout" },
   ];
 
+  // Function to handle dropdown toggle
   const handleDropdownToggle = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
     if (hoverTimeout) clearTimeout(hoverTimeout);
   };
 
+  // Function to handle dropdown hover
   const handleDropdownHover = (index) => {
     setActiveDropdown(index);
     if (hoverTimeout) clearTimeout(hoverTimeout);
   };
 
+  // Function to handle dropdown leave
   const handleDropdownLeave = () => {
     if (hoverTimeout) clearTimeout(hoverTimeout);
     setHoverTimeout(
@@ -62,30 +65,35 @@ export default function Nav() {
       onMenuOpenChange={setIsMenuOpen}
       className="bg-transparent sm:px-[5vw] font-poppins"
     >
+      {/* Navbar toggle button for small screens */}
       <NavbarContent className="sm:hidden flex justify-between">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
+      {/* Navbar brand/logo for small screens */}
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
-            <AcmeLogo className="mr-2 animate-flicker" />
+            <AcmeLogo className="mr-2" />{" "}
+            {/* Assuming AcmeLogo is a custom logo component */}
             <p className="font-bold text-white">LiveResult</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Navbar brand/logo for larger screens */}
       <NavbarContent className="hidden sm:flex gap-4">
         <NavbarBrand className="flex items-center">
           <Link to="/" className="flex items-center">
-            <AcmeLogo className="mr-2 animate-flicker" />
+            <AcmeLogo className="mr-2" />
             <p className="font-bold text-white">LiveResult</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Navbar items for feature categories */}
       <NavbarContent className="hidden sm:flex gap-4 !justify-center font-bold">
         {[
           {
@@ -116,24 +124,15 @@ export default function Nav() {
             onMouseLeave={handleDropdownLeave}
             onClick={() => handleDropdownToggle(index)}
           >
-            <Link
-              to={category.link}
-              className="nav-link inline-block flex items-center"
-            >
+            <Link to={category.link} className="nav-link inline-block">
               {category.icon}
               <span className="ml-1 text-white">{category.name}</span>
               <FaCaretDown className="ml-1" />
             </Link>
             <div
-              className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#000000] to-[#000000] text-white rounded shadow-lg ${
+              className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#7b4397] to-[#dc2430] text-white rounded shadow-lg ${
                 activeDropdown === index ? "block" : "hidden"
               }`}
-              style={{
-                backdropFilter: "blur(5px)",
-                border: "2px solid transparent",
-                borderImage:
-                  "linear-gradient(to right, red, pink, yellow, green, blue) 1",
-              }}
             >
               {menuItems.slice(index * 3, index * 3 + 3).map((item) => (
                 <Link
@@ -155,14 +154,9 @@ export default function Nav() {
         <NavbarItem className="hidden lg:flex">
           <Link
             to="/register"
-            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
-            style={{ textDecoration: "none", color: "#ffff" }}
+            className="nav-link font-bold shadow-slate-300 flex items-center"
           >
-            <FaUserPlus
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
+            <FaUserPlus size={20} color="#ffcc00" />
             Sign Up
           </Link>
         </NavbarItem>
@@ -173,14 +167,9 @@ export default function Nav() {
             as={Link}
             to="/login"
             variant="flat"
-            className="glow-button bg-gradient-to-r from-[#7b4397] to-[#dc2430] hover:from-[#6a11cb] hover:to-[#2575fc] text-white font-bold py-2 rounded-md px-4 transform transition duration-300 hover:scale-105 flex items-center"
-            style={{ textDecoration: "none" }}
+            className="glow-button bg-gradient-to-r from-[#7b4397] to-[#dc2430] hover:from-[#6a11cb] hover:to-[#2575fc] text-white font-bold py-2 rounded-md w-full transform transition duration-300 hover:scale-105 flex items-center"
           >
-            <FaSignInAlt
-              size={20}
-              color="#fff"
-              style={{ marginRight: "0.5rem" }}
-            />
+            <FaSignInAlt size={20} color="#00ff00" />
             Login
           </Button>
         </NavbarItem>
