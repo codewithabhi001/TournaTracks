@@ -101,12 +101,12 @@ export default function Nav() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden !justify-center ">
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
             <GiConsoleController
               size={32}
-              className="mr-2 animate-flicker"
+              className="mr- animate-flicker"
               style={{
                 color: "rgba(255,0,0,1)",
                 textShadow:

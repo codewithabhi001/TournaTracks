@@ -101,29 +101,15 @@ export default function Nav() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden !justify-center ">
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
             <GiConsoleController
               size={32}
+              color="#ffffff"
               className="mr-2 animate-flicker"
-              style={{
-                color: "rgba(255,0,0,1)",
-                textShadow:
-                  "0 0 5px rgba(255,0,0,1), 0 0 10px rgba(255,0,0,1), 0 0 15px rgba(255,0,0,1)",
-              }}
             />
-            <p
-              className="font-bold text-white"
-              style={{
-                fontFamily: "'Press Start 2P', cursive",
-                background: "-webkit-linear-gradient(45deg, #ff0000, #00ff00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              LiveResult
-            </p>
+            <p className="font-bold text-white">LiveResult</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -133,24 +119,10 @@ export default function Nav() {
           <Link to="/" className="flex items-center">
             <GiConsoleController
               size={32}
+              color="#ffffff"
               className="mr-2 animate-flicker"
-              style={{
-                color: "rgba(255,0,0,1)",
-                textShadow:
-                  "0 0 5px rgba(255,0,0,1), 0 0 10px rgba(255,0,0,1), 0 0 15px rgba(255,0,0,1)",
-              }}
             />
-            <p
-              className="font-bold text-white"
-              style={{
-                fontFamily: "'Press Start 2P', cursive",
-                background: "-webkit-linear-gradient(45deg, #ff0000, #00ff00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              LiveResult
-            </p>
+            <p className="font-bold text-white">LiveResult</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -205,21 +177,12 @@ export default function Nav() {
         <NavbarItem className="hidden lg:flex">
           <Link
             to="/register"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
-            style={{
-              textDecoration: "none",
-              color: "#ffff",
-              fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
+            style={{ textDecoration: "none", color: "#ffff" }}
           >
             <FaUserPlus
               size={20}
-              color="#C70039 "
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Sign Up
@@ -230,21 +193,12 @@ export default function Nav() {
         <NavbarItem>
           <Link
             to="/login"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
-            style={{
-              textDecoration: "none",
-              color: "#ffff",
-              fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md"
+            style={{ textDecoration: "none", color: "#ffff" }}
           >
             <FaSignInAlt
               size={20}
-              color="#0FFF50"
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Login

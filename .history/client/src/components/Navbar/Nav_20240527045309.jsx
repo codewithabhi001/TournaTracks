@@ -101,7 +101,7 @@ export default function Nav() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden !justify-center ">
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
             <GiConsoleController
@@ -201,56 +201,56 @@ export default function Nav() {
 
       {/* Navbar items for login and sign up */}
       <NavbarContent justify="end">
-        {/* Sign Up button */}
-        <NavbarItem className="hidden lg:flex">
-          <Link
-            to="/register"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
-            style={{
-              textDecoration: "none",
-              color: "#ffff",
-              fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            <FaUserPlus
-              size={20}
-              color="#C70039 "
-              style={{ marginRight: "0.5rem" }}
-            />
-            Sign Up
-          </Link>
-        </NavbarItem>
+  {/* Sign Up button */}
+  <NavbarItem className="hidden lg:flex">
+    <Link
+      to="/register"
+      className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
+      style={{
+        textDecoration: "none",
+        color: "#ffff",
+        fontFamily: "'Press Start 2P', cursive",
+        border: "2px solid transparent",
+        backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}
+    >
+      <FaUserPlus
+        size={20}
+        color={pathname === "/register" ? "#ff0000" : "#00ff00"} {/* Change icon color based on pathname */}
+        style={{ marginRight: "0.5rem" }}
+      />
+      Sign Up
+    </Link>
+  </NavbarItem>
 
-        {/* Login button */}
-        <NavbarItem>
-          <Link
-            to="/login"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
-            style={{
-              textDecoration: "none",
-              color: "#ffff",
-              fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            <FaSignInAlt
-              size={20}
-              color="#0FFF50"
-              style={{ marginRight: "0.5rem" }}
-            />
-            Login
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+  {/* Login button */}
+  <NavbarItem>
+    <Link
+      to="/login"
+      className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
+      style={{
+        textDecoration: "none",
+        color: "#ffff",
+        fontFamily: "'Press Start 2P', cursive",
+        border: "2px solid transparent",
+        backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}
+    >
+      <FaSignInAlt
+        size={20}
+        color={pathname === "/login" ? "#ff0000" : "#00ff00"} {/* Change icon color based on pathname */}
+        style={{ marginRight: "0.5rem" }}
+      />
+      Login
+    </Link>
+  </NavbarItem>
+</NavbarContent>
 
       {/* Navbar menu for smaller screens */}
       <NavbarMenu className="bg-gradient-to-r from-[#000000] to-[#000000] text-white">

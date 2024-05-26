@@ -101,29 +101,11 @@ export default function Nav() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden !justify-center ">
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
-            <GiConsoleController
-              size={32}
-              className="mr-2 animate-flicker"
-              style={{
-                color: "rgba(255,0,0,1)",
-                textShadow:
-                  "0 0 5px rgba(255,0,0,1), 0 0 10px rgba(255,0,0,1), 0 0 15px rgba(255,0,0,1)",
-              }}
-            />
-            <p
-              className="font-bold text-white"
-              style={{
-                fontFamily: "'Press Start 2P', cursive",
-                background: "-webkit-linear-gradient(45deg, #ff0000, #00ff00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              LiveResult
-            </p>
+            <AcmeLogo className="mr-2 animate-flicker" />
+            <p className="font-bold text-white">LiveResult</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -131,26 +113,8 @@ export default function Nav() {
       <NavbarContent className="hidden sm:flex gap-4">
         <NavbarBrand className="flex items-center">
           <Link to="/" className="flex items-center">
-            <GiConsoleController
-              size={32}
-              className="mr-2 animate-flicker"
-              style={{
-                color: "rgba(255,0,0,1)",
-                textShadow:
-                  "0 0 5px rgba(255,0,0,1), 0 0 10px rgba(255,0,0,1), 0 0 15px rgba(255,0,0,1)",
-              }}
-            />
-            <p
-              className="font-bold text-white"
-              style={{
-                fontFamily: "'Press Start 2P', cursive",
-                background: "-webkit-linear-gradient(45deg, #ff0000, #00ff00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              LiveResult
-            </p>
+            <AcmeLogo className="mr-2 animate-flicker" />
+            <p className="font-bold text-white">LiveResult</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -205,21 +169,12 @@ export default function Nav() {
         <NavbarItem className="hidden lg:flex">
           <Link
             to="/register"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
-            style={{
-              textDecoration: "none",
-              color: "#ffff",
-              fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+            className="nav-link font-bold bg-gradient-to-r from-[#6e4abc] to-[#2575fc] hover:from-[#6a11cb] hover:to-[#2575fc] text-white flex items-center px-4 py-2 rounded-md shadow-md"
+            style={{ textDecoration: "none" }}
           >
             <FaUserPlus
               size={20}
-              color="#C70039 "
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Sign Up
@@ -228,98 +183,33 @@ export default function Nav() {
 
         {/* Login button */}
         <NavbarItem>
-          <Link
-            to="/login"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
-            style={{
-              textDecoration: "none",
-              color: "#ffff",
-              fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+          <Button
+            as={Link}
+            to="/login
+            "
+            variant="flat"
+            className="nav-link font-bold bg-gradient-to-r from-[#6e4abc] to-[#2575fc] hover:from-[#6a11cb] hover:to-[#2575fc] text-white flex items-center px-4 py-2 rounded-md shadow-md"
+            style={{ textDecoration: "none" }}
           >
             <FaSignInAlt
               size={20}
-              color="#0FFF50"
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Login
-          </Link>
+          </Button>
         </NavbarItem>
       </NavbarContent>
 
       {/* Navbar menu for smaller screens */}
-      <NavbarMenu className="bg-gradient-to-r from-[#000000] to-[#000000] text-white">
-        {categories.map((category, index) => (
-          <div key={category.name}>
-            <NavbarMenuItem
-              onClick={() => handleDropdownToggle(index)}
-              className="flex items-center justify-between"
-            >
-              <Link
-                className="w-full flex items-center text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
-                to={category.link}
-              >
-                {category.icon}
-                <span className="ml-1">{category.name}</span>
-              </Link>
-              <FaCaretDown />
-            </NavbarMenuItem>
-            {category.subLinks.length > 0 && (
-              <div
-                className={`pl-6 ${
-                  activeDropdown === index ? "block" : "hidden"
-                }`}
-              >
-                {category.subLinks.map((item) => (
-                  <NavbarMenuItem key={item.name}>
-                    <Link
-                      className="w-full flex items-center text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
-                      to={item.link}
-                    >
-                      {category.icon}
-                      <span className="ml-1">{item.name}</span>
-                    </Link>
-                  </NavbarMenuItem>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+      <NavbarMenu className="bg-gradient-to-r from-[#7b4397] to-[#dc2430] text-white">
+        {/* Rendering menu items */}
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={item.name}>
+          <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
-              className="w-full flex items-center text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
+              className="w-full text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
               to={item.link}
             >
-              {/* Unique icons for each menu item in mobile menu */}
-              {index === 0 && (
-                <AiOutlineStar size={24} color="#00ff00" className="mr-2" />
-              )}
-              {index === 1 && (
-                <MdViewList size={24} color="#ff0000" className="mr-2" />
-              )}
-              {index === 2 && (
-                <BsFillLightningFill
-                  size={24}
-                  color="#ff9900"
-                  className="mr-2"
-                />
-              )}
-              {index === 3 && (
-                <AiFillDashboard size={24} color="#ff00ff" className="mr-2" />
-              )}
-              {index === 4 && (
-                <GiConsoleController
-                  size={24}
-                  color="#ffffff"
-                  className="mr-2"
-                />
-              )}
               {item.name}
             </Link>
           </NavbarMenuItem>

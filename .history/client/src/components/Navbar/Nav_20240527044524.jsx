@@ -101,7 +101,7 @@ export default function Nav() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden !justify-center ">
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
             <GiConsoleController
@@ -200,26 +200,26 @@ export default function Nav() {
       </NavbarContent>
 
       {/* Navbar items for login and sign up */}
+
       <NavbarContent justify="end">
         {/* Sign Up button */}
         <NavbarItem className="hidden lg:flex">
           <Link
             to="/register"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
+            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 hover:border-purple-700 transition duration-300"
             style={{
               textDecoration: "none",
               color: "#ffff",
               fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
+              background: "-webkit-linear-gradient(45deg, #ff0000, #00ff00)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              textShadow: "0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000",
             }}
           >
             <FaUserPlus
               size={20}
-              color="#C70039 "
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Sign Up
@@ -230,21 +230,20 @@ export default function Nav() {
         <NavbarItem>
           <Link
             to="/login"
-            className="nav-link font-bold border shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 transition duration-300"
+            className="nav-link font-bold border border-purple-500 shadow-slate-300 flex items-center px-4 py-2 rounded-md hover:bg-purple-700 hover:border-purple-700 transition duration-300"
             style={{
               textDecoration: "none",
               color: "#ffff",
               fontFamily: "'Press Start 2P', cursive",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(to right, #ff0000, #00ff00)",
-              backgroundClip: "text",
+              background: "-webkit-linear-gradient(45deg, #ff0000, #00ff00)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              textShadow: "0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000",
             }}
           >
             <FaSignInAlt
               size={20}
-              color="#0FFF50"
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Login

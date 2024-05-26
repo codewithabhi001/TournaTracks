@@ -101,7 +101,7 @@ export default function Nav() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden !justify-center ">
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <Link to="/" className="flex items-center">
             <GiConsoleController
@@ -219,7 +219,7 @@ export default function Nav() {
           >
             <FaUserPlus
               size={20}
-              color="#C70039 "
+              color="#fff"
               style={{ marginRight: "0.5rem" }}
             />
             Sign Up
