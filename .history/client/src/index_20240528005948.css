@@ -55,7 +55,7 @@ nav header {
 
 .glass-effect {
   backdrop-filter: blur(0.3px);
-  -webkit-backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0px);
 
   border-radius: 10px;
 
