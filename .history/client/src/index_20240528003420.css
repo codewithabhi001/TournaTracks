@@ -79,7 +79,7 @@ nav header {
   top: 0;
   right: 0;
   z-index: -1;
-  background: #be2d7f;
+  background: #fa0891;
   transition: width 0.5s ease; /* Adding slow-motion transition for width change */
 }
 
