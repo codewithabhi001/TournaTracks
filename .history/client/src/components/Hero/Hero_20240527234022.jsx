@@ -7,7 +7,7 @@ const HeroSection = () => {
     <div
       className="relative text-white mt-20 md:mt-36 mb-48 flex flex-col items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url('girls.png')`,
+        backgroundImage: `url('girls.jpg')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
