@@ -24,7 +24,7 @@ function Footer() {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <FaGamepad className="self-center text-4xl text-pink-400 animate-pulse" />
-            <span className="self-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-pulse">
+            <span className="self-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
               LiveResult
             </span>
           </Link>
@@ -38,7 +38,7 @@ function Footer() {
               <li>
                 <Link
                   to="/AddSlotsForm"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-pink-400"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaGamepad className="mr-2 text-pink-400" />
                   Games
@@ -47,7 +47,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-green-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaShoppingCart className="mr-2 text-green-300" />
                   Accessories
@@ -56,7 +56,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-blue-500"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaGamepad className="mr-2 text-blue-500" />
                   Consoles
@@ -65,7 +65,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-yellow-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaTrophy className="mr-2 text-yellow-300" />
                   Merchandise
@@ -81,7 +81,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-green-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaUsers className="mr-2 text-green-300" />
                   Forums
@@ -90,7 +90,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-blue-500"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaTrophy className="mr-2 text-blue-500" />
                   Events
@@ -99,7 +99,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-yellow-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaGamepad className="mr-2 text-yellow-300" />
                   Contests
@@ -108,7 +108,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-pink-400"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaGamepad className="mr-2 text-pink-400" />
                   Challenges
@@ -124,7 +124,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-green-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaLifeRing className="mr-2 text-green-300" />
                   Help Center
@@ -133,7 +133,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-blue-500"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaEnvelope className="mr-2 text-blue-500" />
                   Contact Us
@@ -142,7 +142,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-yellow-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink"
                 >
                   <FaQuestionCircle className="mr-2 text-yellow-300" />
                   FAQs

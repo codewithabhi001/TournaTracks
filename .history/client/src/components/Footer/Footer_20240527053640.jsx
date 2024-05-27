@@ -24,7 +24,7 @@ function Footer() {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <FaGamepad className="self-center text-4xl text-pink-400 animate-pulse" />
-            <span className="self-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-pulse">
+            <span className="self-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
               LiveResult
             </span>
           </Link>

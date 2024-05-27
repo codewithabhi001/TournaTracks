@@ -8,6 +8,7 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
+  Button,
 } from "@nextui-org/react";
 import { GiConsoleController } from "react-icons/gi"; // Importing gaming controller icon
 import { FaCaretDown, FaSignInAlt, FaUserPlus } from "react-icons/fa"; // Importing Font Awesome icons for login and sign up
@@ -85,10 +86,6 @@ export default function Nav() {
         setActiveDropdown(null);
       }, 200)
     );
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
   };
 
   return (
@@ -192,7 +189,6 @@ export default function Nav() {
                     key={item.name}
                     to={item.link}
                     className="block px-4 py-2 text-sm hover:bg-[#4f2e4f34] transition-colors duration-300"
-                    onClick={handleLinkClick} // Close the menu on link click
                   >
                     {item.name}
                   </Link>
@@ -220,7 +216,6 @@ export default function Nav() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
-            onClick={handleLinkClick} // Close the menu on link click
           >
             <FaUserPlus
               size={20}
@@ -246,11 +241,10 @@ export default function Nav() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
-            onClick={handleLinkClick} // Close the menu on link click
           >
             <FaSignInAlt
               size={20}
-              color="#0FFF50"
+              color="#C70039 "
               style={{ marginRight: "0.5rem" }}
             />
             Login
@@ -269,7 +263,6 @@ export default function Nav() {
               <Link
                 className="w-full flex items-center text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
                 to={category.link}
-                onClick={handleLinkClick} // Close the menu on link click
               >
                 {category.icon}
                 <span className="ml-1">{category.name}</span>
@@ -287,9 +280,9 @@ export default function Nav() {
                     <Link
                       className="w-full flex items-center text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
                       to={item.link}
-                      onClick={handleLinkClick} // Close the menu on link click
                     >
-                      {item.name}
+                      {category.icon}
+                      <span className="ml-1">{item.name}</span>
                     </Link>
                   </NavbarMenuItem>
                 ))}
@@ -302,7 +295,6 @@ export default function Nav() {
             <Link
               className="w-full flex items-center text-white font-semibold transition-colors duration-300 hover:text-[#ff6347]"
               to={item.link}
-              onClick={handleLinkClick} // Close the menu on link click
             >
               {/* Unique icons for each menu item in mobile menu */}
               {index === 0 && (

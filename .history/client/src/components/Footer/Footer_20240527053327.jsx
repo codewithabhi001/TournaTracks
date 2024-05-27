@@ -24,21 +24,21 @@ function Footer() {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <FaGamepad className="self-center text-4xl text-pink-400 animate-pulse" />
-            <span className="self-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-pulse">
+            <span className="self-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500">
               LiveResult
             </span>
           </Link>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 text-base gap-y-8 lg:w-2/3 lg:gap-x-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
+            <h3 className="tracking-wide uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500">
               Products
             </h3>
             <ul className="space-y-1">
               <li>
                 <Link
                   to="/AddSlotsForm"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-pink-400"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaGamepad className="mr-2 text-pink-400" />
                   Games
@@ -47,7 +47,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-green-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaShoppingCart className="mr-2 text-green-300" />
                   Accessories
@@ -56,7 +56,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-blue-500"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaGamepad className="mr-2 text-blue-500" />
                   Consoles
@@ -65,7 +65,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-yellow-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaTrophy className="mr-2 text-yellow-300" />
                   Merchandise
@@ -74,14 +74,14 @@ function Footer() {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
+            <h3 className="tracking-wide uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500">
               Community
             </h3>
             <ul className="space-y-1">
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-green-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaUsers className="mr-2 text-green-300" />
                   Forums
@@ -90,7 +90,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-blue-500"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaTrophy className="mr-2 text-blue-500" />
                   Events
@@ -99,7 +99,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-yellow-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaGamepad className="mr-2 text-yellow-300" />
                   Contests
@@ -108,7 +108,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-pink-400"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaGamepad className="mr-2 text-pink-400" />
                   Challenges
@@ -117,14 +117,14 @@ function Footer() {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
+            <h3 className="uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500">
               Support
             </h3>
             <ul className="space-y-1">
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-green-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaLifeRing className="mr-2 text-green-300" />
                   Help Center
@@ -133,7 +133,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-blue-500"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaEnvelope className="mr-2 text-blue-500" />
                   Contact Us
@@ -142,7 +142,7 @@ function Footer() {
               <li>
                 <Link
                   to="#"
-                  className="text-lg font-bold hover:text-pink-300 flex items-center animate-blink text-yellow-300"
+                  className="text-lg font-bold hover:text-pink-300 flex items-center"
                 >
                   <FaQuestionCircle className="mr-2 text-yellow-300" />
                   FAQs
@@ -151,28 +151,28 @@ function Footer() {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
+            <h3 className="uppercase font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500">
               Connect
             </h3>
             <div className="flex justify-start space-x-3">
               <Link
                 to="#"
                 title="Facebook"
-                className="flex items-center p-2 bg-blue-600 rounded-full hover:bg-blue-400 animate-blink"
+                className="flex items-center p-2 bg-blue-600 rounded-full hover:bg-blue-400"
               >
                 <FaFacebookF className="text-white text-xl animate-pulse" />
               </Link>
               <Link
                 to="#"
                 title="Twitter"
-                className="flex items-center p-2 bg-blue-400 rounded-full hover:bg-blue-200 animate-blink"
+                className="flex items-center p-2 bg-blue-400 rounded-full hover:bg-blue-200"
               >
                 <FaTwitter className="text-white text-xl animate-pulse" />
               </Link>
               <Link
                 to="#"
                 title="Instagram"
-                className="flex items-center p-2 bg-pink-600 rounded-full hover:bg-pink-400 animate-blink"
+                className="flex items-center p-2 bg-pink-600 rounded-full hover:bg-pink-400"
               >
                 <FaInstagram className="text-white text-xl animate-pulse" />
               </Link>
@@ -180,7 +180,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="py-6 text-base text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-green-300 to-blue-500 animate-glow">
+      <div className="py-6 text-base text-center text-white">
         &copy; {new Date().getFullYear()} LiveResult. All rights reserved.
       </div>
     </footer>
