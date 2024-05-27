@@ -1,4 +1,3 @@
-// main.tsx or main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { NextUIProvider } from "@nextui-org/react";
@@ -8,9 +7,11 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <NextUIProvider>
-      <main className=" bg-gradient-to-r from-purple-900 via-black to-blue-900 text-white">
-        <App />
-      </main>
+      <div className="main-bg text-white">
+        <div className="glass-effect">
+          <App />
+        </div>
+      </div>
     </NextUIProvider>
   </React.StrictMode>
 );

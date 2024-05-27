@@ -4,7 +4,15 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <div className="relative text-white mt-20 md:mt-36 mb-48 flex flex-col items-center justify-center overflow-hidden">
+    <div
+      className="relative text-white mt-20 md:mt-36 mb-48 flex flex-col items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url('image.jpg')`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+      }}
+    >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full opacity-40"
@@ -23,7 +31,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-pink-500 to-blue-500 bg-clip-text text-transparent animate-gradient drop-shadow-glow"
+          className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-[#be499d] via-pink-500 to-[#7a036c] bg-clip-text text-transparent animate-gradient drop-shadow-glow"
         >
           Enter the Gaming Arena
         </motion.h1>

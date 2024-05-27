@@ -1,0 +1,47 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure that nav header elements have a maximum width of 100% */
+nav header {
+  max-width: 100% !important;
+}
+
+/* Set a default background color for the body */
+body {
+  background-color: #f5f5f5 !important;
+}
+
+/* Define keyframes for gradient animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply gradient animation to text */
+.animate-gradient-text {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #ffffff,
+    #ff003c,
+    #f3bb04,
+    #60289d,
+    #ff00a2
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-animation 5s ease infinite;
+}
