@@ -28,7 +28,7 @@ const SmoothScrollWrapper = styled.div`
   .scroll-content {
     position: relative;
     will-change: transform;
-    padding-bottom: 2px; /* Adjust footer height */
+    padding-bottom: 150px; /* Adjust footer height */
   }
 
   .footer {
@@ -36,7 +36,7 @@ const SmoothScrollWrapper = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 150px; /* Adjust height as necessary */
+    height: 10px; /* Adjust height as necessary */
     background-color: #333; /* Example background color */
   }
 `;
@@ -76,7 +76,7 @@ const App = () => {
             <Navbar />
             <ScrollToTop /> {/* Component to scroll to top on route change */}
             <Routes>
-              <Route path="/" element={<Home />} /> {/* Home component path */}
+              <Route path="/" element={<Home />} />
               <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
               <Route path="/GetSlots" element={<GetSlots />} />
               <Route path="/login" element={<Login />} />

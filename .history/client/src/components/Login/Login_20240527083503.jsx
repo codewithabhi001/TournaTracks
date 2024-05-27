@@ -46,16 +46,16 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="flex flex-col md:flex-row rounded-lg overflow-hidden shadow-large w-full max-w-4xl">
-        <div className="p-10 text-white w-full md:w-1/2">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-pink-500">
+      <div className="flex flex-col md:flex-row rounded-lg overflow-hidden shadow-2xl w-full max-w-4xl">
+        <div className="p-10 text-white w-full md:w-1/2 bg-gradient-to-br from-purple-600 to-pink-500">
           <h1 className="text-center text-3xl mb-6">Login</h1>
           <form onSubmit={handleSubmit}>
             <label className="block mb-2 text-gray-300" htmlFor="email">
               Please Enter your Account details
             </label>
             <input
-              className="w-full p-3 mb-4 text-black rounded focus:outline-none"
+              className="w-full p-3 mb-4 text-black rounded focus:outline-none bg-white bg-opacity-20"
               type="email"
               id="email"
               placeholder="Johndoe@gmail.com"
@@ -64,7 +64,7 @@ const Login = () => {
               required
             />
             <input
-              className="w-full p-3 mb-4 text-black rounded focus:outline-none"
+              className="w-full p-3 mb-4 text-black rounded focus:outline-none bg-white bg-opacity-20"
               type="password"
               id="password"
               placeholder="Password"
@@ -79,7 +79,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-green-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
+              className={`bg-gradient-to-r from-[#7b4397] via-[#dc2430] to-[#6a11cb] hover:from-blue-500 hover:to-green-500 text-white py-3 rounded-md w-full transform transition duration-300 hover:scale-105 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}
@@ -98,11 +98,11 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center">
+        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-br from-purple-600 to-pink-500">
           <img
             src="Hero3.png"
             alt="Login Illustration"
-            className="mb-6 w-3/4"
+            className="mb-6 w-3/4 filter drop-shadow-2xl"
           />
           <p className="text-center">
             Welcome back! Please enter your details to continue.

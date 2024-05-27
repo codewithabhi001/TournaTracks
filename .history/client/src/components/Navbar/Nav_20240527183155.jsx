@@ -101,7 +101,7 @@ export default function Nav() {
 
       <NavbarContent className="sm:hidden !justify-center">
         <NavbarBrand>
-          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
+          <Link to="/" className="flex items-center">
             <GiConsoleController
               size={32}
               className="mr-2 animate-flicker"
@@ -169,23 +169,21 @@ export default function Nav() {
             </div>
             {category.subLinks.length > 0 && (
               <div
-                className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#000000] to-[#000000] text-white rounded-lg shadow- ${
+                className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#000000] to-[#000000] text-white rounded-lg shadow-2xl ${
                   activeDropdown === index ? "block" : "hidden"
                 }`}
                 style={{
                   backdropFilter: "blur(5px)",
-                  border: "5px solid transparent",
+                  border: "2px solid transparent ",
                   borderImage:
                     "linear-gradient(to right, red, pink, yellow, green, blue) 1",
-                  borderRadius: "12px", // Adjust the value as needed
-                  zIndex: 10, // Ensure dropdown is above other elements
                 }}
               >
                 {category.subLinks.map((item) => (
                   <Link
                     key={item.name}
                     to={item.link}
-                    className="block px-4 py-2 text-sm hover:bg-[#ffffff19] transition-colors duration-300"
+                    className="block px-4 py-2 text-sm hover:bg-[#4f2e4f34] transition-colors duration-300"
                     onClick={handleLinkClick}
                   >
                     {item.name}

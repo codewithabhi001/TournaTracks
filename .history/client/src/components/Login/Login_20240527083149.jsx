@@ -47,11 +47,11 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="flex flex-col md:flex-row rounded-lg overflow-hidden shadow-large w-full max-w-4xl">
+      <div className="flex flex-col md:flex-row  rounded-lg overflow-hidden shadow-2xl border border-gray-700 w-full max-w-4xl">
         <div className="p-10 text-white w-full md:w-1/2">
           <h1 className="text-center text-3xl mb-6">Login</h1>
           <form onSubmit={handleSubmit}>
-            <label className="block mb-2 text-gray-300" htmlFor="email">
+            <label className="block mb-2" htmlFor="email">
               Please Enter your Account details
             </label>
             <input
@@ -92,13 +92,13 @@ const Login = () => {
               <i className="fab fa-facebook text-2xl cursor-pointer hover:text-pink-500"></i>
             </div>
             <div className="text-center">
-              <Link to="#" className="text-pink-500">
+              <a to="#" className="text-pink-500">
                 Create an account
-              </Link>
+              </a>
             </div>
           </form>
         </div>
-        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center">
+        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center ">
           <img
             src="Hero3.png"
             alt="Login Illustration"

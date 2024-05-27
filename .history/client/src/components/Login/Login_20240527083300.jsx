@@ -46,16 +46,16 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="flex flex-col md:flex-row rounded-lg overflow-hidden shadow-large w-full max-w-4xl">
-        <div className="p-10 text-white w-full md:w-1/2">
+    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+      <div className="flex flex-col md:flex-row rounded-lg overflow-hidden shadow-2xl border border-gray-700 w-full max-w-4xl">
+        <div className="p-10 text-white w-full md:w-1/2 bg-gradient-to-r from-gray-800 to-gray-700 border-r border-gray-700">
           <h1 className="text-center text-3xl mb-6">Login</h1>
           <form onSubmit={handleSubmit}>
             <label className="block mb-2 text-gray-300" htmlFor="email">
               Please Enter your Account details
             </label>
             <input
-              className="w-full p-3 mb-4 text-black rounded focus:outline-none"
+              className="w-full p-3 mb-4 text-black rounded focus:outline-none bg-gray-800"
               type="email"
               id="email"
               placeholder="Johndoe@gmail.com"
@@ -64,7 +64,7 @@ const Login = () => {
               required
             />
             <input
-              className="w-full p-3 mb-4 text-black rounded focus:outline-none"
+              className="w-full p-3 mb-4 text-black rounded focus:outline-none bg-gray-800"
               type="password"
               id="password"
               placeholder="Password"
@@ -98,7 +98,7 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center">
+        <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-900 border-gray-700 border-t md:border-t-0 md:border-l">
           <img
             src="Hero3.png"
             alt="Login Illustration"

@@ -76,7 +76,7 @@ const App = () => {
             <Navbar />
             <ScrollToTop /> {/* Component to scroll to top on route change */}
             <Routes>
-              <Route path="/" element={<Home />} /> {/* Home component path */}
+              <Route path="/H" element={<Home />} /> {/* Home component path */}
               <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
               <Route path="/GetSlots" element={<GetSlots />} />
               <Route path="/login" element={<Login />} />

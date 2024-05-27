@@ -101,7 +101,7 @@ export default function Nav() {
 
       <NavbarContent className="sm:hidden !justify-center">
         <NavbarBrand>
-          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
+          <Link to="/" className="flex items-center">
             <GiConsoleController
               size={32}
               className="mr-2 animate-flicker"
@@ -178,14 +178,13 @@ export default function Nav() {
                   borderImage:
                     "linear-gradient(to right, red, pink, yellow, green, blue) 1",
                   borderRadius: "12px", // Adjust the value as needed
-                  zIndex: 10, // Ensure dropdown is above other elements
                 }}
               >
                 {category.subLinks.map((item) => (
                   <Link
                     key={item.name}
                     to={item.link}
-                    className="block px-4 py-2 text-sm hover:bg-[#ffffff19] transition-colors duration-300"
+                    className="block px-4 py-2 text-sm hover:bg-[#ffffff] transition-colors duration-300"
                     onClick={handleLinkClick}
                   >
                     {item.name}

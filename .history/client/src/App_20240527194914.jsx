@@ -21,14 +21,16 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 // Define styled component for smooth scrolling
 const SmoothScrollWrapper = styled.div`
   .scroll-container {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
+    height: 100vh; /* Fill viewport height */
   }
 
   .scroll-content {
     position: relative;
     will-change: transform;
-    padding-bottom: 2px; /* Adjust footer height */
+    min-height: calc(100vh - 150px); /* Subtract footer height */
+    padding-bottom: 150px; /* Adjust footer height */
   }
 
   .footer {
@@ -76,7 +78,7 @@ const App = () => {
             <Navbar />
             <ScrollToTop /> {/* Component to scroll to top on route change */}
             <Routes>
-              <Route path="/" element={<Home />} /> {/* Home component path */}
+              <Route path="/" element={<Home />} />
               <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
               <Route path="/GetSlots" element={<GetSlots />} />
               <Route path="/login" element={<Login />} />

@@ -16,28 +16,18 @@ import GetSlots from "./components/getSlots/GetSlots";
 import Home from "./components/Home/Home";
 import styled from "styled-components";
 import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/dist/locomotive-scroll.css";
+import "locomotive-scroll/dist/locomotive-scroll.css"; // Use the compiled CSS
 
 // Define styled component for smooth scrolling
 const SmoothScrollWrapper = styled.div`
   .scroll-container {
+    height: 100%;
     overflow: hidden;
-    position: relative;
   }
 
-  .scroll-content {
-    position: relative;
-    will-change: transform;
-    padding-bottom: 2px; /* Adjust footer height */
-  }
-
-  .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px; /* Adjust height as necessary */
-    background-color: #333; /* Example background color */
+  & .scroll-content {
+    height: 100%;
+    min-height: 100vh;
   }
 `;
 
@@ -59,7 +49,6 @@ const App = () => {
       const scroll = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        multiplier: 1,
       });
 
       return () => {
@@ -76,7 +65,7 @@ const App = () => {
             <Navbar />
             <ScrollToTop /> {/* Component to scroll to top on route change */}
             <Routes>
-              <Route path="/" element={<Home />} /> {/* Home component path */}
+              <Route path="/" element={<Home />} />
               <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
               <Route path="/GetSlots" element={<GetSlots />} />
               <Route path="/login" element={<Login />} />
@@ -87,7 +76,7 @@ const App = () => {
               />
               <Route path="/forget-password" element={<ForgotPassword />} />
             </Routes>
-            <Footer className="footer" />
+            <Footer />
           </div>
         </div>
       </SmoothScrollWrapper>
