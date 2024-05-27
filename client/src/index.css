@@ -47,13 +47,13 @@ nav header {
   align-items: center;
 
   /* Ensure the background image covers the entire container */
-  background: url("girl.jpg") no-repeat center center/cover;
+  background: url("girls.png") no-repeat center center/cover;
 }
 
 /* Glass effect styling */
 .glass-effect {
   /* Semi-transparent background */
-  background: rgba(0, 0, 0, 0.075);
+  background: rgba(0, 0, 0, 0.13);
   /* Blur effect */
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(3px);
