@@ -29,22 +29,20 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <Router>
-      <div className="main-bg text-white">
-        <div className="glass-effect">
-          <Navbar />
-          <ScrollToTop /> {/* Component to scroll to top on route change */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
-            <Route path="/GetSlots" element={<GetSlots />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/forget-password" element={<ForgotPassword />} />
-          </Routes>
-          <Footer />
-        </div>
+      <div>
+        <Navbar />
+        <ScrollToTop /> {/* Component to scroll to top on route change */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
+          <Route path="/GetSlots" element={<GetSlots />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/forget-password" element={<ForgotPassword />} />
+        </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };

@@ -21,7 +21,6 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  console.log(pathname);
 
   return null;
 };
@@ -29,10 +28,10 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <Router>
-      <div className="main-bg text-white">
-        <div className="glass-effect">
-          <Navbar />
-          <ScrollToTop /> {/* Component to scroll to top on route change */}
+      <ScrollToTop /> {/* Component to scroll to top on route change */}
+      <div className="main-bg text-white min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-grow glass-effect">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
@@ -42,8 +41,8 @@ const App = () => {
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/forget-password" element={<ForgotPassword />} />
           </Routes>
-          <Footer />
         </div>
+        <Footer />
       </div>
     </Router>
   );

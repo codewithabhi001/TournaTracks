@@ -7,8 +7,10 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <NextUIProvider>
-      <div className=" text-white">
-        <App />
+      <div className="main-bg text-white">
+        <div className="glass-effect">
+          <App />
+        </div>
       </div>
     </NextUIProvider>
   </React.StrictMode>
