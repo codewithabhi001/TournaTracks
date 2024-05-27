@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <div className="relative text-white  mt-36 mb-48 flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative text-white  mt-40 mb-32 flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full opacity-40"
