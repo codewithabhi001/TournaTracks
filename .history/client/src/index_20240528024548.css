@@ -40,13 +40,17 @@ nav header {
   color: transparent;
   animation: gradient-animation 6s ease infinite;
 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /* Add text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow properties as needed */
 }
 
+/* Style for the main background container */
 .main-bg {
   justify-content: center;
   align-items: center;
 
+  /* Ensure the background image covers the entire container */
+  /* background: url("girls.png") no-repeat center center/cover; */
   background: linear-gradient(220deg, #700460, #000000, #40037a);
 }
 

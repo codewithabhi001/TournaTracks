@@ -72,4 +72,4 @@ const HeroSection = () => {
   );
 };
 
-export default React.memo(HeroSection);
+export default HeroSection;

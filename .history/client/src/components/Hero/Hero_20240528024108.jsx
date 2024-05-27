@@ -17,7 +17,7 @@ const HeroSection = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.1)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       ></div>
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -72,4 +72,4 @@ const HeroSection = () => {
   );
 };
 
-export default React.memo(HeroSection);
+export default HeroSection;

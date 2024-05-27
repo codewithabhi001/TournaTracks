@@ -15,8 +15,7 @@ const HeroSection = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
+
           backgroundColor: "rgba(0, 0, 0, 0.1)",
         }}
       ></div>
@@ -72,4 +71,4 @@ const HeroSection = () => {
   );
 };
 
-export default React.memo(HeroSection);
+export default HeroSection;

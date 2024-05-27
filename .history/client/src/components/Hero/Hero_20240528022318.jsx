@@ -6,7 +6,13 @@ const HeroSection = () => {
     <div
       className="relative text-white flex flex-col items-center justify-center h-screen bg-cover bg-no-repeat bg-center"
       style={{
+        position: "relative",
         backgroundImage: `url('queen1.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        width: "100%",
+        height: "100%",
       }}
     >
       <div
@@ -72,4 +78,4 @@ const HeroSection = () => {
   );
 };
 
-export default React.memo(HeroSection);
+export default HeroSection;

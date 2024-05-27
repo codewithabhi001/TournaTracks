@@ -7,6 +7,7 @@ const HeroSection = () => {
       className="relative text-white flex flex-col items-center justify-center h-screen bg-cover bg-no-repeat bg-center"
       style={{
         backgroundImage: `url('queen1.jpg')`,
+        backgroundSize: "conten",
       }}
     >
       <div
@@ -72,4 +73,4 @@ const HeroSection = () => {
   );
 };
 
-export default React.memo(HeroSection);
+export default HeroSection;
