@@ -47,6 +47,9 @@ nav header {
 
   /* Ensure the background image covers the entire container */
   background: url("girls.png") no-repeat center center/cover;
+
+  /* Adding black background shadow */
+  box-shadow: 0 0 20px rgb(0, 0, 0); /* Adjust the shadow properties as needed */
 }
 
 .glass-effect {
