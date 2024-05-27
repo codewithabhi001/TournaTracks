@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
-// import "./AddSlotsForm.css"; // Assuming you have custom CSS for additional styles
+import "./AddSlotsForm.css"; // Assuming you have custom CSS for additional styles
 
 const AddSlotsForm = () => {
   const initialState = {

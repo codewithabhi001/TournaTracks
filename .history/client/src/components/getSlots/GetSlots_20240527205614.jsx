@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toPng } from "html-to-image";
 import { motion } from "framer-motion";
-import "./App.css";
+// import "./App.css";
 
 function App() {
   const [slots, setSlots] = useState([]);
