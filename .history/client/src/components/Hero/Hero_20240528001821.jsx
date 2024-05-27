@@ -53,12 +53,8 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="flex flex-row justify-center space-x-4"
         >
-          <button className="btn-13 px-6 py-2 md:px-8 md:py-3 lg:px-10 lg:py-4 text-base md:text-lg lg:text-xl font-semibold rounded-md focus:outline-none">
-            Start Now
-          </button>
-          <button className="btn-13 px-6 py-2 md:px-8 md:py-3 lg:px-10 lg:py-4 text-base md:text-lg lg:text-xl font-semibold rounded-md focus:outline-none">
-            Learn More
-          </button>
+          <button className="btn-13 ">Start Now</button>
+          <button className="btn-13 ">Learn More</button>
         </motion.div>
       </div>
     </div>

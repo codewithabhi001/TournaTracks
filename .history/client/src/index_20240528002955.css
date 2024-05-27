@@ -64,7 +64,7 @@ nav header {
 /* Add this to your CSS file or a <style> tag */
 .btn-13 {
   color: #fdfdfd;
-  border: 2px solid #fa0891;
+  border: 1px solid #c508fa;
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -79,7 +79,7 @@ nav header {
   top: 0;
   right: 0;
   z-index: -1;
-  background: #fa0891;
+  background: #c508fa;
   transition: width 0.5s ease; /* Adding slow-motion transition for width change */
 }
 

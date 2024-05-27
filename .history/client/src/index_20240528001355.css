@@ -47,13 +47,10 @@ nav header {
 
   /* Ensure the background image covers the entire container */
   background: url("girls.png") no-repeat center center/cover;
-
-  /* Adding black background shadow */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adjust the shadow properties as needed */
 }
 
 .glass-effect {
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(3px);
 
   border-radius: 10px;
@@ -61,36 +58,31 @@ nav header {
   color: #fff;
 }
 
-/* Add this to your CSS file or a <style> tag */
+/* 13 */
 .btn-13 {
-  color: #fdfdfd;
-  border: 2px solid #fa0891;
+  color: #ff9aff;
+  border: 1px solid #ff9aff;
+  box-shadow: 0 0 5px #ff9aff, 0 0 5px #ff9aff inset;
   z-index: 1;
-  position: relative;
-  overflow: hidden;
-  background-color: #00000043;
 }
-
 .btn-13:after {
-  position: absolute;
   content: "";
   width: 0;
   height: 100%;
   top: 0;
   right: 0;
   z-index: -1;
-  background: #fa0891;
-  transition: width 0.5s ease; /* Adding slow-motion transition for width change */
+  background: #ff9aff;
+  box-shadow: 0 0 20px #ff9aff;
+  transition: all 0.3s ease;
 }
-
-.btn-13:hover:after {
-  width: 100%; /* Filling background color on hover */
-}
-
 .btn-13:hover {
-  color: #ffffff; /* Changing color on hover */
+  color: #fff;
 }
-
+.btn-13:hover:after {
+  left: 0;
+  width: 100%;
+}
 .btn-13:active {
   top: 2px;
 }

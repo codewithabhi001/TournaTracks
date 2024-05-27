@@ -1,4 +1,3 @@
-// src/components/HeroSection.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -53,12 +52,20 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="flex flex-row justify-center space-x-4"
         >
-          <button className="btn-13 px-6 py-2 md:px-8 md:py-3 lg:px-10 lg:py-4 text-base md:text-lg lg:text-xl font-semibold rounded-md focus:outline-none">
+          <a href="#" className="btn-13">
             Start Now
-          </button>
-          <button className="btn-13 px-6 py-2 md:px-8 md:py-3 lg:px-10 lg:py-4 text-base md:text-lg lg:text-xl font-semibold rounded-md focus:outline-none">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <a href="#" className="btn-13">
             Learn More
-          </button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </motion.div>
       </div>
     </div>
