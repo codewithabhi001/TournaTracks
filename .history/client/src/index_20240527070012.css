@@ -1,0 +1,12 @@
+/* Set default background color */
+
+/* tailwind.css */
+@tailwind base;
+
+nav header {
+  max-width: 100% !important;
+}
+
+body {
+  background-color: coral;
+}

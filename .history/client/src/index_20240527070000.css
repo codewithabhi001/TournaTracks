@@ -1,0 +1,16 @@
+/* Set default background color */
+
+/* tailwind.css */
+@tailwind base;
+
+nav header {
+  max-width: 100% !important;
+}
+
+body {
+  background-color: color-mix(
+    in hsl shorter hue,
+    color percentage,
+    color percentage
+  );
+}
