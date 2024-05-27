@@ -233,6 +233,7 @@ export default function Nav() {
               color: "#ffff",
               fontFamily: "'Press Start 2P', cursive",
               border: "2px solid transparent",
+              backgroundImage: "
               backgroundImage: "linear-gradient(to right, #fff , #fff)",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",

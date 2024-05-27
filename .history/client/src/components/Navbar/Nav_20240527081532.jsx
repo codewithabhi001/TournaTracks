@@ -1,5 +1,5 @@
 // src/components/Nav.jsx
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -17,9 +17,8 @@ import { MdViewList } from "react-icons/md"; // Importing list icon
 import { BsFillLightningFill } from "react-icons/bs"; // Importing lightning icon for animation
 
 export default function Nav() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [dropdownTimeout, setDropdownTimeout] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [activeDropdown, setActiveDropdown] = React.useState(null);
 
   const menuItems = [
     { name: "Profile", link: "/profile" },
@@ -70,15 +69,6 @@ export default function Nav() {
 
   const handleDropdownToggle = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
-  };
-
-  const handleMouseEnter = (index) => {
-    if (dropdownTimeout) clearTimeout(dropdownTimeout);
-    setActiveDropdown(index);
-  };
-
-  const handleMouseLeave = () => {
-    setDropdownTimeout(setTimeout(() => setActiveDropdown(null), 200));
   };
 
   const handleLinkClick = () => {
@@ -158,8 +148,8 @@ export default function Nav() {
           <div
             key={category.name}
             className="relative dropdown-item"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setActiveDropdown(index)}
+            onMouseLeave={() => setActiveDropdown(null)}
             onClick={() => handleDropdownToggle(index)}
           >
             <div className="nav-link inline-block flex items-center">
@@ -169,7 +159,7 @@ export default function Nav() {
             </div>
             {category.subLinks.length > 0 && (
               <div
-                className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#000000] to-[#000000] text-white rounded-lg shadow-lg ${
+                className={`dropdown-menu absolute left-0 mt-2 py-2 w-48 bg-gradient-to-r from-[#000000] to-[#000000] text-white rounded shadow-lg ${
                   activeDropdown === index ? "block" : "hidden"
                 }`}
                 style={{
