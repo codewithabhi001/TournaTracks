@@ -153,7 +153,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
           <div className="col-span-1 w-full">
             <motion.h2
-              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4 bg-purple-800 rounded-lg border border-purple-500"
+              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4  bg-[#00000055]"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -166,7 +166,7 @@ function App() {
               return (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-between p-2 md:p-4 mb-2 h-12 md:h-12 bg-gradient-to-r from-purple-700 to-purple-900 rounded-lg border border-[#FFF] w-full"
+                  className="flex items-center justify-between p-2 md:p-4 mb-2 h-12 md:h-12  rounded-lg border border-[#FFF] w-full bg-[#00000055]"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -190,7 +190,7 @@ function App() {
           </div>
           <div className="col-span-1 w-full">
             <motion.h2
-              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4 bg-purple-800 rounded-lg border border-purple-500"
+              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4 bg-[#00000055] "
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -203,7 +203,7 @@ function App() {
               return (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-between p-2 md:p-4 mb-2 h-12 md:h-12 bg-gradient-to-r from-purple-700 to-purple-900 rounded-lg border border-[#FFF] w-full"
+                  className="flex items-center justify-between p-2 md:p-4 mb-2 h-12 md:h-12 rounded-lg border border-[#FFF] w-full bg-[#00000055]"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}

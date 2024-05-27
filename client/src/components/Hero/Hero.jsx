@@ -1,18 +1,25 @@
-// src/components/HeroSection.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <div
-      className="relative text-white mt-20 md:mt-36 mb-48 flex flex-col items-center justify-center overflow-hidden"
+      className="relative text-white flex flex-col items-center justify-center h-screen bg-cover bg-no-repeat bg-center"
       style={{
-        backgroundImage: `url('girls.png')`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
+        backgroundImage: `url('queen1.jpg')`,
       }}
     >
+      <div
+        className="overlay"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.1)",
+        }}
+      ></div>
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full opacity-40"

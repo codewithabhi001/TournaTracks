@@ -14,7 +14,7 @@ import Login from "./components/Login/Login";
 import AddSlotsForm from "./components/AddSlotsForm/AddSlotsForm";
 import GetSlots from "./components/getSlots/GetSlots";
 import Home from "./components/Home/Home";
-import backgroundImage from "./assets/girls.png"; // Adjust the path according to your project structure
+// import backgroundImage from "./assets/girls.png"; // Adjust the path according to your project structure
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,7 +34,7 @@ const App = () => {
         className="main-bg text-white"
         style={{
           position: "relative", // Ensure relative positioning for the overlay
-          backgroundImage: `url(${backgroundImage})`,
+          // backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
