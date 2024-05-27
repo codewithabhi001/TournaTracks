@@ -14,6 +14,7 @@ import Login from "./components/Login/Login";
 import AddSlotsForm from "./components/AddSlotsForm/AddSlotsForm";
 import GetSlots from "./components/getSlots/GetSlots";
 import Home from "./components/Home/Home";
+import App from "./main";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -21,7 +22,6 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  console.log(pathname);
 
   return null;
 };
@@ -29,18 +29,20 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <Router>
-      <div className="main-bg text-white">
+      <ScrollToTop /> {/* Component to scroll to top on route change */}
+      <div className="main-bg text-white min-h-screen flex flex-col">
         <Navbar />
-        <ScrollToTop /> {/* Component to scroll to top on route change */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
-          <Route path="/GetSlots" element={<GetSlots />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path="/forget-password" element={<ForgotPassword />} />
-        </Routes>
+        <div className="flex-grow glass-effect p-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/AddSlotsForm" element={<AddSlotsForm />} />
+            <Route path="/GetSlots" element={<GetSlots />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/forget-password" element={<ForgotPassword />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>

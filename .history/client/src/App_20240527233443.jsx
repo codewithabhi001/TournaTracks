@@ -29,7 +29,7 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <Router>
-      <div className="main-bg text-white">
+      <div>
         <Navbar />
         <ScrollToTop /> {/* Component to scroll to top on route change */}
         <Routes>
@@ -41,8 +41,8 @@ const App = () => {
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/forget-password" element={<ForgotPassword />} />
         </Routes>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 };

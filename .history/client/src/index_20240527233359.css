@@ -40,6 +40,7 @@ nav header {
   color: transparent;
   animation: gradient-animation 6s ease infinite;
 }
+
 /* Style for the main background container */
 .main-bg {
   justify-content: center;
