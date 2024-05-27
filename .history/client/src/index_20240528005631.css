@@ -41,7 +41,7 @@ nav header {
   animation: gradient-animation 6s ease infinite;
 
   /* Add text shadow */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow properties as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust shadow properties as needed */
 }
 
 /* Style for the main background container */
@@ -65,7 +65,7 @@ nav header {
 /* Add this to your CSS file or a <style> tag */
 .btn-13 {
   color: #fdfdfd;
-  border: 2px solid #be499d;
+  border: 2px solid #b41b58;
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -80,7 +80,7 @@ nav header {
   top: 0;
   right: 0;
   z-index: -1;
-  background: #be499d;
+  background: #b41b58;
   transition: width 0.5s ease; /* Adding slow-motion transition for width change */
 }
 
