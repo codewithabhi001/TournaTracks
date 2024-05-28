@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
 // Create an Axios instance with the base URL
 const api = axios.create({
-  baseURL: "https://tournatracks.onrender.com",
+  baseURL: 'http://localhost:5000'
 });
 
 export default api;

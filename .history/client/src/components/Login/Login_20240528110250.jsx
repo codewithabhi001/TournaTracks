@@ -1,37 +1,51 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./ForgotPassword.css"; // Create a separate CSS file for custom styles
-import api from "../../api";
+import "./Login.css"; // Create a separate CSS file for custom styles
 
-const ForgotPassword = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(true); // Set loading to true when login starts
 
     try {
-      const response = await api.post("/api/auth/forget-password", { email });
+      // const response = await axios.post(
+      //   "https://tournatracks.onrender.com/api/auth/login", // Ensure the correct URL
+      //   { email, password },
+      //   { withCredentials: true } // Important: Include this option
+      // );
+      const response = await api.post("/api/auth/login");
 
       if (response.status === 200) {
-        toast.success("Password reset email sent. Please check your inbox.");
-        setEmail("");
+        // Login successful
+        toast.success("Login successful.");
+        const cookies = response.headers["set-cookie"];
+
+        if (cookies) {
+          sessionStorage.setItem("sessionCookies", JSON.stringify(cookies));
+          console.log("Cookies stored in session storage:", cookies);
+        }
+
+        // Redirect or perform other actions upon successful login
       }
     } catch (error) {
-      if (error.response && error.response.status === 404) {
-        toast.error("User not found. Please enter a valid email.");
+      if (error.response && error.response.status === 401) {
+        // Invalid credentials
+        toast.error("Invalid email or password.");
       } else {
-        toast.error(
-          "Failed to send password reset email. Please try again later."
-        );
+        // Other login errors
+        console.error("Login error:", error);
+        toast.error("Login failed. Please try again!");
       }
-      console.error("Forgot password error:", error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Set loading to false when login process completes
     }
   };
 
@@ -45,7 +59,7 @@ const ForgotPassword = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Forgot Password
+            Login
           </motion.h1>
           <form onSubmit={handleSubmit}>
             <motion.label
@@ -55,7 +69,7 @@ const ForgotPassword = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
-              Please enter your email address
+              Please Enter your Account details
             </motion.label>
             <motion.input
               className="w-full p-3 mb-4 text-black rounded focus:outline-none neon-input"
@@ -69,6 +83,23 @@ const ForgotPassword = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.5 }}
             />
+            <motion.input
+              className="w-full p-3 mb-4 text-black rounded focus:outline-none neon-input"
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            />
+            <div className="text-right mb-4">
+              <Link to="/forget-password" className="text-neon">
+                Forgot Password
+              </Link>
+            </div>
             <motion.button
               type="submit"
               className={`bg-gradient-to-r from-purple-600 via-red-500 to-yellow-500 hover:from-blue-500 hover:to-red-500 text-white py-2 rounded-md w-full transform transition duration-300 hover:scale-105 ${
@@ -79,16 +110,26 @@ const ForgotPassword = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.5 }}
             >
-              {loading ? "Resetting Password..." : "Reset Password"}
+              {loading ? "Loading..." : "Login"}
             </motion.button>
             <motion.div
-              className="text-center mt-4"
+              className="flex justify-around my-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.5 }}
             >
-              <Link to="/login" className="text-neon">
-                Remembered your password? Login here
+              <i className="fab fa-google text-2xl cursor-pointer hover:text-pink-500"></i>
+              <i className="fab fa-github text-2xl cursor-pointer hover:text-pink-500"></i>
+              <i className="fab fa-facebook text-2xl cursor-pointer hover:text-pink-500"></i>
+            </motion.div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.3, duration: 0.5 }}
+            >
+              <Link to="#" className="text-neon">
+                Create an account
               </Link>
             </motion.div>
           </form>
@@ -96,7 +137,7 @@ const ForgotPassword = () => {
         <div className="p-10 text-white w-full md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-b from-transparent via-black to-transparent">
           <motion.img
             src="Hero3.png"
-            alt="Forgot Password Illustration"
+            alt="Login Illustration"
             className="mb-6 w-full max-w-xs md:max-w-sm neon-image"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -108,8 +149,7 @@ const ForgotPassword = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            Enter your email address and we will send you a link to reset your
-            password.
+            Welcome back! Please enter your details to continue.
           </motion.p>
         </div>
       </div>
@@ -129,4 +169,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default Login;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import api from "../../api";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -23,11 +23,14 @@ const Register = () => {
     }
 
     try {
-      const response = await api.post("/api/auth/register", {
-        name,
-        email,
-        password,
-      });
+      const response = await api.post(
+        "http://localhost:5000/api/auth/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
 
       if (response.status === 201) {
         toast.success("Registration successful! Please log in.");

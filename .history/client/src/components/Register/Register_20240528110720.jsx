@@ -23,11 +23,14 @@ const Register = () => {
     }
 
     try {
-      const response = await api.post("/api/auth/register", {
-        name,
-        email,
-        password,
-      });
+      const response = await api.post(
+        "http://localhost:5000/api/auth/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
 
       if (response.status === 201) {
         toast.success("Registration successful! Please log in.");

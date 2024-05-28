@@ -15,7 +15,10 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await api.post("/api/auth/forget-password", { email });
+      const response = await api.post(
+        "http://localhost:5000/api/auth/forget-password",
+        { email }
+      );
 
       if (response.status === 200) {
         toast.success("Password reset email sent. Please check your inbox.");
