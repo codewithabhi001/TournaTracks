@@ -1,0 +1,22 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure that nav header elements have a maximum width of 100% */
+nav header {
+  max-width: 100% !important;
+}
+
+.main-bg {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(285deg, #6435d3, #6e1083, #7014c7);
+}
+
+.glass-effect {
+  backdrop-filter: blur(0.3px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border-radius: 10px;
+  color: #fff;
+}

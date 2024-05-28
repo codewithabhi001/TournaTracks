@@ -1,0 +1,94 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure that nav header elements have a maximum width of 100% */
+nav header {
+  max-width: 100% !important;
+}
+
+/* Define keyframes for gradient animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply gradient animation to text */
+.animate-gradient-text {
+  background: linear-gradient(
+    270deg,
+    #3f2cb7,
+    #6354d9,
+    #bcbce4,
+    #ffffff,
+    #f53d61,
+    #8d8dac,
+    #8139ce,
+    #ff00a2
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-animation 6s ease infinite;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-bg {
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(260deg, #700460, #000000, #40037a);
+}
+
+.glass-effect {
+  backdrop-filter: blur(0.3px);
+  -webkit-backdrop-filter: blur(0.5px);
+
+  border-radius: 10px;
+
+  color: #fff;
+}
+
+/* Add this to your CSS file or a <style> tag */
+.btn-13 {
+  color: #fdfdfd;
+  border: 2px solid #be499d;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #00000043;
+}
+
+.btn-13:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #be499d;
+  transition: width 0.5s ease; /* Adding slow-motion transition for width change */
+}
+
+.btn-13:hover:after {
+  width: 100%; /* Filling background color on hover */
+}
+
+.btn-13:hover {
+  color: #ffffff; /* Changing color on hover */
+}
+
+.btn-13:active {
+  top: 2px;
+}

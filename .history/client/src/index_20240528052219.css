@@ -1,0 +1,9 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure that nav header elements have a maximum width of 100% */
+nav header {
+  max-width: 100% !important;
+}
