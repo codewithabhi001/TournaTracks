@@ -21,12 +21,12 @@ app.use(
   })
 );
 
-// app.use(
-//   cors({
-//     origin: "https://bgmiscrims.site", // Allow requests from this origin
-//     credentials: true, // Allow cookies to be sent along with the request
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://bgmiscrims.site", // Allow requests from this origin
+    credentials: true, // Allow cookies to be sent along with the request
+  })
+);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
