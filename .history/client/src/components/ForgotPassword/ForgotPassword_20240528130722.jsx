@@ -14,33 +14,21 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    toast.dismiss();
 
     try {
       const response = await api.post("/api/auth/forget-password", { email });
 
       if (response.status === 200) {
-        toast.success("Password reset email sent. Please check your inbox.", {
-          toastId: "success1",
-        });
+        toast.success("Password reset email sent. Please check your inbox.");
         setEmail("");
       }
     } catch (error) {
       if (error.response && error.response.status === 404) {
-        if (!toast.isActive("error1")) {
-          toast.error("User not found. Please enter a valid email.", {
-            toastId: "error1",
-          });
-        }
+        toast.error("User not found. Please enter a valid email.");
       } else {
-        if (!toast.isActive("error2")) {
-          toast.error(
-            "Failed to send password reset email. Please try again later.",
-            {
-              toastId: "error2",
-            }
-          );
-        }
+        toast.error(
+          "Failed to send password reset email. Please try again later."
+        );
       }
       console.error("Forgot password error:", error);
     } finally {
