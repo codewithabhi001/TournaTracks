@@ -253,7 +253,7 @@ export default function Nav() {
       </NavbarContent>
 
       {/* Navbar menu for smaller screens */}
-      <NavbarMenu className="bg-gradient-to-r from-[#160e24] to-[#3e0456f4] text-white">
+      <NavbarMenu className="bg-gradient-to-r from-[#000000] to-[#000000f4] text-white">
         {categories.map((category, index) => (
           <div key={category.name}>
             <NavbarMenuItem
