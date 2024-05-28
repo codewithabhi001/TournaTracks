@@ -14,19 +14,19 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(requestIp.mw()); // Add the request-ip middleware here
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173", // Update to your frontend URL
-//     credentials: true, // Allow credentials
-//   })
-// );
-
 app.use(
   cors({
-    origin: "https://bgmiscrims.site", // Allow requests from this origin
-    credentials: true, // Allow cookies to be sent along with the request
+    origin: "https://bgmiscrims.site", // Update to your frontend URL
+    credentials: true, // Allow credentials
   })
 );
+
+// app.use(
+//   cors({
+//     origin: "https://bgmiscrims.site", // Allow requests from this origin
+//     credentials: true, // Allow cookies to be sent along with the request
+//   })
+// );
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
