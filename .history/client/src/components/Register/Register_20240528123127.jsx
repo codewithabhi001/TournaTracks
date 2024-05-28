@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../../../ToastifyCustom.css"; // Import the custom styles
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import api from "../../api";
 
@@ -12,7 +11,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -32,15 +30,11 @@ const Register = () => {
       });
 
       if (response.status === 201) {
-        toast.success("Registration successful! Redirecting to login page...");
+        toast.success("Registration successful! Please log in.");
         setName("");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
-
-        setTimeout(() => {
-          navigate("/login"); // Redirect to login page
-        }, 2000);
       }
     } catch (error) {
       if (error.response && error.response.status === 409) {
@@ -197,7 +191,7 @@ const Register = () => {
         </div>
       </div>
       <ToastContainer
-        position="top-center"
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

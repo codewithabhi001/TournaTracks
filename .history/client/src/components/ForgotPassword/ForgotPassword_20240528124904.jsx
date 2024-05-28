@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./ForgotPassword.css"; // Create a separate CSS file for custom styles
 import api from "../../api";
-import "../../../ToastifyCustom.css"; // Import the custom styles
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");

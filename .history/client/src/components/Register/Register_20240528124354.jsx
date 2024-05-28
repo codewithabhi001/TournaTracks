@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../../../ToastifyCustom.css"; // Import the custom styles
+// import "../../../ToastifyCustom.css"; // Import the custom styles
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { motion } from "framer-motion";
 import api from "../../api";
@@ -197,7 +197,7 @@ const Register = () => {
         </div>
       </div>
       <ToastContainer
-        position="top-center"
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

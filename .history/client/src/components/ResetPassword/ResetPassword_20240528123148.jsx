@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import api from "../../api";
-import "../../../ToastifyCustom.css"; // Import the custom styles
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -130,7 +129,7 @@ const ResetPassword = () => {
             </motion.button>
           </form>
           <ToastContainer
-            position="top-center"
+            position="top-right"
             autoClose={5000}
             hideProgressBar={false}
             newestOnTop={false}
