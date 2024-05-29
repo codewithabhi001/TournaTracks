@@ -26,6 +26,7 @@ export default function App() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="bg.jpg"
+          loading="lazy"
         />
       </Card>
       <Card className="col-span-12 sm:col-span-3 h-[300px]">
@@ -42,6 +43,7 @@ export default function App() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="girl.jpg"
+          loading="lazy"
         />
       </Card>
       <Card className="col-span-12 sm:col-span-3 h-[300px]">
@@ -58,6 +60,7 @@ export default function App() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="girl.jpg"
+          loading="lazy"
         />
       </Card>
       <Card className="col-span-12 sm:col-span-3 h-[300px]">
@@ -74,6 +77,7 @@ export default function App() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="girls4.jpg"
+          loading="lazy"
         />
       </Card>
 
@@ -95,6 +99,7 @@ export default function App() {
           alt="Card example background"
           className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
           src="queen1.jpg"
+          loading="lazy"
         />
         <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
           <div>
@@ -127,6 +132,7 @@ export default function App() {
           alt="Leaderboard background"
           className="z-0 w-full h-full object-cover"
           src="queen.jpg"
+          loading="lazy"
         />
         <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
@@ -134,6 +140,7 @@ export default function App() {
               alt="Leaderboard icon"
               className="rounded-full w-10 h-11 bg-black"
               src="https://nextui.org/images/leaderboard-icon.jpeg"
+              loading="lazy"
             />
             <div className="flex flex-col">
               <p className="text-tiny text-white/60">Leaderboard</p>
