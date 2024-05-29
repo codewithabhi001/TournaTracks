@@ -5,9 +5,9 @@ const HeroSection = () => {
   return (
     <div
       className="relative text-white flex items-center justify-center h-screen bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: `url('girl.jpg')` }}
+      //   style={{ backgroundImage: `url('girl.jpg')` }}
     >
-      <div className="overlay absolute top-0 left-0 w-full h-full bg-[#00000019]"></div>
+      <div className="overlay absolute top-0 left-0 w-full h-full bg-[#00000008]"></div>
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full opacity-40"
@@ -19,25 +19,15 @@ const HeroSection = () => {
           animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         ></motion.div>
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.1) 100%)",
-          }}
-        ></motion.div>
       </div>
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full mx-auto px-8 py-12">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full  mx-auto px-8 py-12">
         <div className="w-full md:w-auto text-center md:text-left p-8">
           <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="text-5xl md:text-6xl lg:text-6xl py-2 font-extrabold mb-4 bg-gradient-to-r from-[#d2add3] via-pink- to-[#aa0df3] bg-clip-text text-transparent animate-gradient drop-shadow-glow"
+            className="text- md:text-6xl  bg-clip-text text-transparent animate-gradient drop-shadow-glow"
           >
             Enter the Gaming Arena
           </motion.h1>
@@ -68,9 +58,8 @@ const HeroSection = () => {
           </motion.div>
         </div>
         <div className="w-full md:w-1/2 flex items-center justify-center p-8">
-          {/* Uncomment and update the src attribute if you want to add an image */}
           {/* <motion.img
-            src="Hero.png"
+            // src="Hero.png"
             alt="Gaming Branding"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
