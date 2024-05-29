@@ -1,9 +1,0 @@
-/* Set default background color */
-
-/* tailwind.css */
-
-@tailwind components;
-@tailwind utilities;
-nav header {
-  max-width: 100% !important;
-}

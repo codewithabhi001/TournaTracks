@@ -1,9 +1,0 @@
-@layer utilities {
-  .hover\\:glow-icon {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  .hover\\:glow-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  }
-}

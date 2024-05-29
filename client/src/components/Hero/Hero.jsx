@@ -5,9 +5,9 @@ const HeroSection = () => {
   return (
     <div
       className="relative text-white flex items-center justify-center h-screen bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: `url('girl.jpg')` }}
+      //   style={{ backgroundImage: `url('girl.jpg')` }}
     >
-      <div className="overlay absolute top-0 left-0 w-full h-full bg-[#000000bd]"></div>
+      <div className="overlay absolute top-0 left-0 w-full h-full bg-[#00000008]"></div>
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full opacity-40"
