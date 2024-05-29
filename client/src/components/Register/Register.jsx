@@ -195,7 +195,6 @@ const Register = () => {
             Create your account and start your journey with us.
           </motion.p>
         </div>
-        +7996
       </div>
       <ToastContainer
         position="top-center"
