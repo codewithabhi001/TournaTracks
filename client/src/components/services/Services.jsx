@@ -72,7 +72,7 @@ function ServiceCard({ title, description, color }) {
         backdropFilter: "blur(10px)",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#3a04ae] to-black opacity-60 transition duration-300 group-hover:opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#00000000] to-black opacity-60 transition duration-300 group-hover:opacity-50"></div>
       <div
         className={`absolute inset-0 bg-${color}-500 opacity-30 transition duration-300 group-hover:opacity-20`}
       ></div>

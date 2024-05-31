@@ -1,38 +1,18 @@
+// src/components/HeroSection.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import "./Hero.css";
 
 const HeroSection = () => {
   return (
-    <div
-      className="relative text-white flex items-center justify-center h-screen bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: `url('girl.jpg')` }}
-    >
-      <div className="overlay absolute top-0 left-0 w-full h-full bg-[#00000019]"></div>
+    <div className="relative text-white flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center">
+      <div className="overlay absolute top-0 left-0 w-full h-full"></div>
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full opacity-40"
-          animate={{ opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        ></motion.div>
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full bg-stars-pattern opacity-50"
-          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        ></motion.div>
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.1) 100%)",
-          }}
-        ></motion.div>
+        {/* Your background animations */}
       </div>
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full mx-auto px-8 py-12">
-        <div className="w-full md:w-auto text-center md:text-left p-8">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between mx-auto  px-8 py-12">
+        <div className="w-full md:w-auto text-center md:text-left p-8 md:pt-16">
           <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -67,16 +47,24 @@ const HeroSection = () => {
             </button>
           </motion.div>
         </div>
-        <div className="w-full md:w-1/2 flex items-center justify-center p-8">
-          {/* Uncomment and update the src attribute if you want to add an image */}
-          {/* <motion.img
-            src="Hero.png"
-            alt="Gaming Branding"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="w-full h-auto max-w-xs lg:max-w-md"
-          /> */}
+        <div className="w-full md:w-1/2 flex items-center justify-center p-8 overflow-visible">
+          <motion.div
+            className="relative max-w-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl shadow-2xl overflow-visible transform transition duration-500 hover:scale-105"
+            initial={{ rotate: -5 }}
+            whileHover={{ rotate: 0 }}
+          >
+            <div className="relative z-10">
+              <img
+                className="w-full h-96 object-cover rounded-xl"
+                src="https://img.freepik.com/free-photo/cartoon-woman-wearing-vr-glasses_23-2151136877.jpg?t=st=1717113087~exp=1717116687~hmac=b2661a3e7103f4208e54a152c2e37940a7fce2e768ebc58725ff3fbc77531f6a&w=996"
+                alt="Placeholder"
+              />
+            </div>
+            <div className="absolute inset-0 rounded-xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-50 rounded-xl blur"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-50 rounded-xl blur"></div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

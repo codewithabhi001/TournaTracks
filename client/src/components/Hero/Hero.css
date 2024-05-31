@@ -1,0 +1,38 @@
+/* Updated Button styles with Responsive Sizing */
+.btn-13 {
+  color: #fdfdfd;
+  border: 2px solid #b858a7;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+  padding: 10px 20px; /* Adjust default button padding for size */
+}
+
+.btn-13:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #b858a7; /* Color to fill */
+  transition: width 0.3s ease; /* Animation duration */
+  z-index: -1; /* Behind the button text */
+  box-shadow: 0 0 20px 10px #b858a7;
+}
+
+.btn-13:hover:before {
+  width: 100%; /* Fill width on hover */
+}
+
+.btn-13:hover {
+  color: #ffffff;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .btn-13 {
+    padding: 8px 16px; /* Adjust button padding for smaller screens */
+  }
+}

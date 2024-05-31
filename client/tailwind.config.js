@@ -1,4 +1,5 @@
 const { nextui } = require("@nextui-org/react");
+const tailwindcss = require("tailwindcss");
 
 module.exports = {
   content: [
@@ -10,5 +11,5 @@ module.exports = {
     extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [tailwindcss, nextui()],
 };
