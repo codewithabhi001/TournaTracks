@@ -5,7 +5,7 @@ import "./Hero.css";
 
 const HeroSection = () => {
   return (
-    <div className="relative text-white flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center">
+    <div className="relative text-white flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center ">
       <div className="overlay absolute top-0 left-0 w-full h-full"></div>
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Your background animations */}

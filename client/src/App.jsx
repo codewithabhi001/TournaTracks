@@ -39,17 +39,6 @@ const App = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div
-          className="overlay"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.1)",
-          }}
-        ></div>
         <Navbar />
         <ScrollToTop /> {/* Component to scroll to top on route change */}
         <div className="glass-effect">

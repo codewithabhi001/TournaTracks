@@ -4,6 +4,7 @@ const {
   loginUser,
   forgetPassword,
   resetPassword,
+  getSlots, // Make sure to import the getSlots function
 } = require("../controllers/authController");
 
 const router = express.Router();
@@ -19,5 +20,8 @@ router.post("/forget-password", forgetPassword);
 
 // Reset password route
 router.post("/reset-password/:resetToken", resetPassword);
+
+// Get slots route
+router.get("/GetSlots", getSlots);
 
 module.exports = router;

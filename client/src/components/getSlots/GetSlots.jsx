@@ -11,12 +11,13 @@ function App() {
   useEffect(() => {
     async function fetchSlots() {
       try {
-        let url = "http://localhost:5000/getSlots";
+        let url = "http://localhost:5000/api/auth/GetSlots";
         if (selectedSlotId) {
           url += `/${selectedSlotId}`;
         }
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);
         setSlots(data);
       } catch (error) {
         console.error("Error fetching slots:", error);
@@ -46,7 +47,7 @@ function App() {
         cacheBust: true,
         pixelRatio: 2,
         style: {
-          backgroundImage: `url(${backgroundImage}), linear-gradient(to bottom, #4f2d8c, #000000)`,
+          backgroundImage: `url(${backgroundImage}), linear-gradient(to bottom, #00000, #000000)`,
           backgroundSize: "cover",
           transform: "scale(1)",
           transformOrigin: "top left",
@@ -68,7 +69,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen text-white flex flex-col items-center justify-center py-10 bg-dark">
+    <div className="min-h-screen text-white flex flex-col items-center justify-center py-10 ">
       <div className="flex flex-col md:flex-row items-center mb-4">
         <div className="mr-2 mb-2 md:mb-0">
           <input
@@ -92,7 +93,7 @@ function App() {
           Download
         </button>
         <select
-          className="bg-gradient-to-r from-purple-600 via-red-500 to-yellow-500 hover:from-blue-500 hover:to-red-500 text-white font-bold py-2 px-4 rounded neon-button"
+          className="!bg-gradient-to-r from-purple-600 via-red-500 to-yellow-500 hover:from-blue-500 hover:to-red-500 text-white font-bold py-2 px-4 rounded neon-button bg-zinc-900"
           onChange={handleSlotSelect}
           value={selectedSlotId}
         >
@@ -107,13 +108,13 @@ function App() {
 
       <motion.main
         id="main-container"
-        className="w-full max-w-xl p-4 md:p-6 border-4 border-purple-500 rounded-lg shadow-lg"
+        className="w-full max-w-xl p-4 md:p-6 rounded-lg shadow-lg  border-1 border-[#c1a7d4]"
         style={{
           background: backgroundImage
             ? `url(${backgroundImage}) no-repeat center center / cover`
-            : "linear-gradient(to bottom, #4f2d8c, #000000)",
+            : "linear-gradient(350deg, #00051a, #2e003e, #a2004b, #50008a, #8e0051, #2e003e, #2e003e, #00051a)",
           backgroundSize: "cover",
-          backgroundColor: "transparent",
+          backgroundColor: "#0000",
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -153,7 +154,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
           <div className="col-span-1 w-full">
             <motion.h2
-              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4  bg-[#00000055]"
+              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4 bg-[#00000055]"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -166,7 +167,7 @@ function App() {
               return (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-between p-2 md:p-4 mb-2 h-12 md:h-12  rounded-lg border border-[#FFF] w-full bg-[#00000055]"
+                  className="flex items-center justify-between p-2 md:p-4 mb-2 h-12 md:h-12 rounded-lg border border-[#FFF] w-full bg-[#00000055]"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -190,7 +191,7 @@ function App() {
           </div>
           <div className="col-span-1 w-full">
             <motion.h2
-              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4 bg-[#00000055] "
+              className="text-lg md:text-2xl font-semibold text-center p-2 mb-2 md:mb-4 bg-[#00000055]"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
