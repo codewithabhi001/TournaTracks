@@ -1,5 +1,3 @@
-const express = require("express");
-const router = express.Router();
 const User = require("../models/User");
 const Slot = require("../models/Slot");
 const bcrypt = require("bcryptjs");
@@ -178,6 +176,40 @@ exports.getSlots = async (req, res) => {
     res.status(200).json(slots);
   } catch (error) {
     console.error("Error fetching slots:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+// Create new slot
+exports.createSlot = async (req, res) => {
+  try {
+    const { organizationName, matchTitle, matchDate, teams } = req.body;
+
+    // Validate the input
+    if (
+      !organizationName ||
+      !matchTitle ||
+      !matchDate ||
+      !teams ||
+      teams.length === 0
+    ) {
+      return res.status(400).json({ error: "Please fill out all fields." });
+    }
+
+    // Create a new slot
+    const newSlot = new Slot({
+      organizationName,
+      matchTitle,
+      matchDate,
+      teams,
+      createdAt: new Date(),
+    });
+
+    await newSlot.save();
+
+    res.status(200).json({ message: "Slots successfully created!" });
+  } catch (error) {
+    console.error("Error during slot creation:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };

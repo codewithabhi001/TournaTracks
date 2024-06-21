@@ -1,17 +1,29 @@
 const mongoose = require("mongoose");
 
 const slotSchema = new mongoose.Schema({
-  name: {
+  organizationName: {
     type: String,
     required: true,
   },
-  date: {
+  matchTitle: {
+    type: String,
+    required: true,
+  },
+  matchDate: {
     type: Date,
     required: true,
   },
+  teams: {
+    type: [String],
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
   available: {
     type: Boolean,
-    required: true,
+    default: true,
   },
   // Add other fields as necessary
 });

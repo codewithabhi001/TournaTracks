@@ -1,27 +1,20 @@
 const express = require("express");
+const router = express.Router();
 const {
   registerUser,
   loginUser,
   forgetPassword,
   resetPassword,
-  getSlots, // Make sure to import the getSlots function
+  getSlots,
+  createSlot,
 } = require("../controllers/authController");
 
-const router = express.Router();
-
-// Register route
+// Routes
 router.post("/register", registerUser);
-
-// Login route
 router.post("/login", loginUser);
-
-// Forgot password route
 router.post("/forget-password", forgetPassword);
-
-// Reset password route
 router.post("/reset-password/:resetToken", resetPassword);
-
-// Get slots route
-router.get("/GetSlots", getSlots);
+router.get("/slots", getSlots);
+router.post("/slots", createSlot);
 
 module.exports = router;

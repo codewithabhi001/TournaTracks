@@ -221,7 +221,7 @@ export default function App() {
             Learn More
           </Button>
           <Button
-            className="text-tiny text-white bg-black border border-white/60 hover:bg-white/10"
+            className="text-tiny text-white bg-transparent border border-white/60 hover:bg-white/10"
             radius="full"
             size="sm"
           >
