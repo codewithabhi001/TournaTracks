@@ -10,7 +10,7 @@ const slotSchema = new mongoose.Schema({
     required: true,
   },
   matchDate: {
-    type: Date,
+    type: String, // Changed to String to accept any string input
     required: true,
   },
   teams: {
