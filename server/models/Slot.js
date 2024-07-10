@@ -28,6 +28,5 @@ const slotSchema = new mongoose.Schema({
   // Add other fields as necessary
 });
 
-const Slot = mongoose.model("Slot", slotSchema);
-
-module.exports = Slot;
+// Export a function to create a dynamic model
+module.exports = (collectionName) => mongoose.model(collectionName, slotSchema);
