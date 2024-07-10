@@ -1,11 +1,13 @@
 const User = require("../models/User");
 const Slot = require("../models/Slot");
+const createDynamicSlotModel = require("../models/Slot");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
 require("dotenv").config();
 const recordLoginAttempt = require("../middlewares/recordLoginAttempt");
+
 
 // Register User
 exports.registerUser = async (req, res) => {
@@ -29,6 +31,22 @@ exports.registerUser = async (req, res) => {
       registrationDate: new Date(),
     });
     await newUser.save();
+
+    // Construct the collection name based on the user's email
+    const collectionName = `slots_${newUser.email.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}`;
+
+    // Create a new dynamic model for the collection
+    const DynamicSlot = createDynamicSlotModel(collectionName);
+
+    // Optional: Create an initial document in the new collection (if needed)
+    const initialSlot = new DynamicSlot({
+      organizationName: newUser.name,
+      matchTitle: "Initial Match",
+      matchDate: new Date().toISOString(),
+      teams: ["Team A", "Team B"]
+    });
+
+    await initialSlot.save();
 
     res.status(201).json({ message: "Registration successful!" });
   } catch (error) {
@@ -181,9 +199,12 @@ exports.getSlots = async (req, res) => {
 };
 
 // Create new slot
+
+
+// Create new slot
 exports.createSlot = async (req, res) => {
   try {
-    const { organizationName, matchTitle, matchDate, teams } = req.body;
+    const { organizationName, matchTitle, matchDate, teams, email } = req.body;
 
     // Validate the input
     if (
@@ -191,13 +212,20 @@ exports.createSlot = async (req, res) => {
       !matchTitle ||
       !matchDate ||
       !teams ||
-      teams.length === 0
+      teams.length === 0 ||
+      !email
     ) {
       return res.status(400).json({ error: "Please fill out all fields." });
     }
 
+    // Construct the collection name based on the user's email
+    const collectionName = `slots_${email.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}`;
+
+    // Create a new dynamic model for the collection
+    const DynamicSlot = createDynamicSlotModel(collectionName);
+
     // Create a new slot
-    const newSlot = new Slot({
+    const newSlot = new DynamicSlot({
       organizationName,
       matchTitle,
       matchDate,
@@ -207,7 +235,7 @@ exports.createSlot = async (req, res) => {
 
     await newSlot.save();
 
-    res.status(200).json({ message: "Slots successfully created!" });
+    res.status(200).json({ message: "Slot successfully created!" });
   } catch (error) {
     console.error("Error during slot creation:", error);
     res.status(500).json({ error: "Internal Server Error" });
