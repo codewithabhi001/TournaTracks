@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const Slot = require("../models/Slot");
 const createDynamicSlotModel = require("../models/Slot");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -39,43 +38,34 @@ exports.registerUser = async (req, res) => {
 };
 
 // Login User
-exports.loginUser = async (req, res, next) => {
+exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
     // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
-      req.loginSuccess = false;
-      return recordLoginAttempt(req, res, () => {
-        res.status(401).json({ message: "Invalid email or password" });
-      });
+      return res.status(401).json({ message: "Invalid email or password" });
     }
 
     // Check if password matches
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      req.loginSuccess = false;
-      return recordLoginAttempt(req, res, () => {
-        res.status(401).json({ message: "Invalid email or password" });
-      });
+      return res.status(401).json({ message: "Invalid email or password" });
     }
 
     user.lastLogin = new Date();
-    req.loginSuccess = true;
-    await recordLoginAttempt(req, res, async () => {
-      await user.save();
+    await user.save();
 
-      // Generate JWT
-      const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-        expiresIn: "1h",
-      });
-
-      // Send token in cookie
-      res.cookie("token", token, { httpOnly: true, secure: true });
-
-      res.status(200).json({ message: "Login successful", token });
+    // Generate JWT
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
     });
+
+    // Send token in cookie
+    res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === "production" });
+
+    res.status(200).json({ message: "Login successful", token });
   } catch (error) {
     console.error("User login failed:", error);
     res.status(500).json({ error: "Login failed. Please try again." });
@@ -173,7 +163,7 @@ exports.resetPassword = async (req, res) => {
 // Get all slots
 exports.getSlots = async (req, res) => {
   try {
-    const { email } = req.query; // Assuming you pass email as a query parameter
+    const email = req.user.email;
 
     if (!email) {
       return res.status(400).json({ error: "Email is required to fetch slots." });
