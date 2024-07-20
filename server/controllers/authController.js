@@ -30,12 +30,17 @@ exports.registerUser = async (req, res) => {
     });
     await newUser.save();
 
+    // Create user's dynamic collection for slots
+    const collectionName = `slots_${email.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}`;
+    createDynamicSlotModel(collectionName);
+
     res.status(201).json({ message: "Registration successful!" });
   } catch (error) {
     console.error("User registration failed:", error);
     res.status(500).json({ error: "Registration failed. Please try again." });
   }
 };
+
 
 // Login User
 exports.loginUser = async (req, res) => {
