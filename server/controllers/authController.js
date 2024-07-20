@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const Slot = require("../models/Slot");
+const createDynamicSlotModel = require("../models/Slot");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
@@ -172,7 +173,17 @@ exports.resetPassword = async (req, res) => {
 // Get all slots
 exports.getSlots = async (req, res) => {
   try {
-    const slots = await Slot.find();
+    const { email } = req.query; // Assuming you pass email as a query parameter
+
+    if (!email) {
+      return res.status(400).json({ error: "Email is required to fetch slots." });
+    }
+
+    const collectionName = `slots_${email.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}`;
+    const DynamicSlot = createDynamicSlotModel(collectionName);
+
+    const slots = await DynamicSlot.find();
+
     res.status(200).json(slots);
   } catch (error) {
     console.error("Error fetching slots:", error);
@@ -183,21 +194,16 @@ exports.getSlots = async (req, res) => {
 // Create new slot
 exports.createSlot = async (req, res) => {
   try {
-    const { organizationName, matchTitle, matchDate, teams } = req.body;
+    const { organizationName, matchTitle, matchDate, teams, email } = req.body;
 
-    // Validate the input
-    if (
-      !organizationName ||
-      !matchTitle ||
-      !matchDate ||
-      !teams ||
-      teams.length === 0
-    ) {
+    if (!organizationName || !matchTitle || !matchDate || !teams || teams.length === 0 || !email) {
       return res.status(400).json({ error: "Please fill out all fields." });
     }
 
-    // Create a new slot
-    const newSlot = new Slot({
+    const collectionName = `slots_${email.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}`;
+    const DynamicSlot = createDynamicSlotModel(collectionName);
+
+    const newSlot = new DynamicSlot({
       organizationName,
       matchTitle,
       matchDate,
@@ -207,7 +213,7 @@ exports.createSlot = async (req, res) => {
 
     await newSlot.save();
 
-    res.status(200).json({ message: "Slots successfully created!" });
+    res.status(200).json({ message: "Slot successfully created!" });
   } catch (error) {
     console.error("Error during slot creation:", error);
     res.status(500).json({ error: "Internal Server Error" });
