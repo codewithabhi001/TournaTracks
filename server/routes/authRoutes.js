@@ -8,13 +8,14 @@ const {
   getSlots,
   createSlot,
 } = require("../controllers/authController");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // Routes
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.post("/forget-password", forgetPassword);
 router.post("/reset-password/:resetToken", resetPassword);
-router.get("/getslots", getSlots); // Ensure this matches your endpoint
-router.post("/slots", createSlot);
+router.get("/getslots", authMiddleware, getSlots);
+router.post("/slots", authMiddleware, createSlot);
 
 module.exports = router;
