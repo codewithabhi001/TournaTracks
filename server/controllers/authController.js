@@ -187,17 +187,27 @@ exports.resetPassword = async (req, res) => {
   }
 };
 
-// Get all slots
 exports.getSlots = async (req, res) => {
   try {
+    // Add logging to understand the function's execution flow
+    console.log("Fetching slots...");
+
+    // Attempt to fetch all slots
     const slots = await Slot.find();
+
+    // Log the result
+    console.log("Slots fetched successfully:", slots);
+
+    // Send the fetched slots in the response
     res.status(200).json(slots);
   } catch (error) {
+    // Log the error to understand what went wrong
     console.error("Error fetching slots:", error);
+
+    // Send an appropriate error response
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 // Create new slot
 
 
