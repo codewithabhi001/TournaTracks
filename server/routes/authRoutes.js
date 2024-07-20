@@ -16,6 +16,6 @@ router.post("/login", loginUser);
 router.post("/forget-password", forgetPassword);
 router.post("/reset-password/:resetToken", resetPassword);
 router.get("/getslots", authMiddleware, getSlots);
-router.post("/slots", authMiddleware, createSlot);
+router.post("/createslots", authMiddleware, createSlot);
 
 module.exports = router;
