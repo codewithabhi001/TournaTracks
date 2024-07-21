@@ -41,7 +41,6 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-
 // Login User
 exports.loginUser = async (req, res) => {
   try {
@@ -187,9 +186,6 @@ exports.getSlots = async (req, res) => {
 };
 
 // Create new slot
-// controllers/userController.js
-
-
 exports.createSlot = async (req, res) => {
   try {
     const { organizationName, matchTitle, matchDate, teams } = req.body;
@@ -213,9 +209,23 @@ exports.createSlot = async (req, res) => {
 
     await newSlot.save();
 
-    res.status(200).json({ message: "Slot successfully created!" });
+    res.status(201).json({ message: "Slot created successfully!" });
   } catch (error) {
-    console.error("Error during slot creation:", error);
+    console.error("Error creating slot:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+// Get logged-in user's details
+exports.getUserDetails = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Error fetching user details:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
