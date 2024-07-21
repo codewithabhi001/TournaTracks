@@ -187,13 +187,18 @@ exports.getSlots = async (req, res) => {
 };
 
 // Create new slot
+// controllers/userController.js
+
+
 exports.createSlot = async (req, res) => {
   try {
-    const { organizationName, matchTitle, matchDate, teams, email } = req.body;
+    const { organizationName, matchTitle, matchDate, teams } = req.body;
 
-    if (!organizationName || !matchTitle || !matchDate || !teams || teams.length === 0 || !email) {
+    if (!organizationName || !matchTitle || !matchDate || !teams || teams.length === 0) {
       return res.status(400).json({ error: "Please fill out all fields." });
     }
+
+    const email = req.user.email; // Get email from token
 
     const collectionName = `slots_${email.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}`;
     const DynamicSlot = createDynamicSlotModel(collectionName);
