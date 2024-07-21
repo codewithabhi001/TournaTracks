@@ -7,8 +7,8 @@ const {
   resetPassword,
   getSlots,
   createSlot,
-  getUserDetails // Import the getUserDetails controller function
-} = require("../controllers/userController"); // Renamed to userController
+  getUserDetails, // Import the getUserDetails controller function
+} = require("../controllers/authController"); // Updated to authController
 const authMiddleware = require("../middlewares/authMiddleware");
 
 // Routes
